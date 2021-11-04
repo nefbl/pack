@@ -9,7 +9,6 @@
 <p>
   <a href="https://hai2007.gitee.io/npm-downloads?interval=7&packages=@nefbl/pack"><img src="https://img.shields.io/npm/dm/@nefbl/pack.svg" alt="downloads"></a>
   <a href="https://www.npmjs.com/package/@nefbl/pack"><img src="https://img.shields.io/npm/v/@nefbl/pack.svg" alt="Version"></a>
-  <a href="https://github.com/nefbl/pack/graphs/code-frequency" target='_blank'><img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/nefbl/pack"></a>
   <a href="https://github.com/nefbl/pack/graphs/commit-activity" target='_blank'><img alt="GitHub repo commit" src="https://img.shields.io/github/last-commit/nefbl/pack"></a>
   <a href="https://github.com/nefbl/pack/blob/master/LICENSE"><img src="https://img.shields.io/npm/l/@nefbl/pack.svg" alt="License"></a>
   <a href="https://github.com/nefbl/pack" target='_blank'><img alt="GitHub repo stars" src="https://img.shields.io/github/stars/nefbl/pack?style=social"></a>

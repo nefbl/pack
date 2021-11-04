@@ -1,0 +1,21 @@
+.help {
+    text-align: center;
+    margin-top: 100px;
+
+    &>div {
+        &.logo {
+            background-image: url('./logo.png');
+            height: 200px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: auto 80%;
+        }
+
+        &.links {
+            &>a {
+                font-size: 14px;
+                font-weight: 800;
+            }
+        }
+    }
+}

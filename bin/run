@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+
+'use strict';
+
+process.title = 'nefbl-pack';
+
+const nodejs = require('@hai2007/nodejs');
+
+// 获取命令行参数
+const parsed = nodejs.option({}, process.argv);
+
+console.log(parsed);
