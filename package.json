@@ -1,9 +1,9 @@
 {
   "name": "@nefbl/pack",
-  "version": "0.1.0-alpha.0",
+  "version": "0.1.0-alpha.2",
   "description": "nefbl打包工具",
   "bin": {
-    "nefblpack": "bin/run"
+    "nefbl_pack": "bin/run"
   },
   "repository": {
     "type": "git",
