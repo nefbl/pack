@@ -4,9 +4,23 @@
 
 process.title = 'nefbl-server';
 
+let nodejs = require('@hai2007/nodejs');
+
 // 首先，获取配置文件
-let config=require('./config')(process);
+let config = require('./config')(process);
 
-console.log(config)
+nodejs.server({
+
+    // 端口号
+    port: config.devServer.port,
+
+    // 服务器根路径
+    contentBase: config.devServer.contentBase,
+
+    // 拦截处理
+    handler: function (request, response) {
 
 
+    }
+
+});

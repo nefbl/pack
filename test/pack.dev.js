@@ -3,7 +3,7 @@ const { merge } = require('@nefbl/pack');
 
 module.exports = merge(common, {
     devServer: {
-        contentBase: "./",
+        contentBase: "../",
         port: 20000
     },
     mode: "development"

@@ -17,6 +17,11 @@
 ## Issues
 使用的时候遇到任何问题或有好的建议，请点击进入[issue](https://github.com/nefbl/pack/issues)！
 
+
+## How to use?
+
+具体的使用你可以[查阅文档](https://nefbl.github.io/pack)哦~
+
 开源协议
 ---------------------------------------
 [MIT](https://github.com/nefbl/pack/blob/master/LICENSE)

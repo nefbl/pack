@@ -47,6 +47,17 @@ loader: [{
     }
 },...]
     </pre>
+    <h4 id='fixed-config-items-task'>
+        task
+    </h4>
+    <p>
+        可选，类似生命周期，在特定时期触发。可选的钩子如下：
+    </p>
+    <pre q-code>
+task:{
+
+}
+    </pre>
     <h4 id='fixed-config-items-mode'>
         mode
     </h4>
