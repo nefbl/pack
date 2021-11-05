@@ -10,11 +10,9 @@
   "dependencies": {
     "@hai2007/polyfill": "^0.1.1",
     "@hai2007/style": "^0.3.0",
-    "nefbl": "^0.2.3",
     "sprout-ui": "^0.1.0"
   },
   "devDependencies": {
-    "@nefbl/pack": "0.1.0-alpha.3",
-    "tslib": "^2.3.1"
+    "@nefbl/pack": "0.1.0-alpha.3"
   }
 }
