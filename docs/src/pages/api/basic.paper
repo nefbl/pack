@@ -1,0 +1,96 @@
+<template class='doc-view'>
+    <header id='fixed-top'>
+        如何使用
+    </header>
+    <h2 id='fixed-config'>
+        添加配置文件
+    </h2>
+    <p>
+        首先，你需要在项目中新建一个js文件（比如
+        <span class="important">'pack.config.js'</span>
+        ），并写入下面内容：
+    </p>
+    <pre q-code>
+module.exports = {
+    // 在此处添加具体的配置条目
+};
+    </pre>
+    <p>
+        然后，根据实际情况，写入需要的具体配置条目即可。
+    </p>
+    <h3 id='fixed-config-items'>
+        可配置条目
+    </h3>
+    <h4 id='fixed-config-items-entry'>
+        entry
+    </h4>
+    <p>
+        必输，打包入口文件。
+    </p>
+    <h4 id='fixed-config-items-output'>
+        output
+    </h4>
+    <p>
+        必输，打包后的代码存放的位置。
+    </p>
+    <h4 id='fixed-config-items-loader'>
+        loader
+    </h4>
+    <p>
+        可选，对于各种文件如何解析的配置（一般而言，除了js、json等文件，都需要配置对应的解析方法）。
+    </p>
+    <pre q-code>
+loader: [{
+    test: /\.(js|ts)$/,
+    handler(source) {
+        // 进行处理
+    }
+},...]
+    </pre>
+    <h4 id='fixed-config-items-mode'>
+        mode
+    </h4>
+    <p>
+        必输，当前环境，应该是一个字符串，只有两个值可选：
+        <span class="important">development</span>
+        和
+        <span class="important">production</span>
+        。
+    </p>
+    <h4 id='fixed-config-items-devServer'>
+        devServer
+    </h4>
+    <p>
+        对于开发环境是必输，表示用于辅助开发的本地服务器。
+    </p>
+    <pre q-code>
+devServer: {
+    contentBase: "./",
+    port: 20000
+}
+    </pre>
+    <h2 id='fixed-terminal'>
+        命令
+    </h2>
+    <p>
+        配置文件准备好了以后，根据实际情况，配置不同的启动命令即可：
+    </p>
+    <pre q-code>
+scripts:{
+    'dev':'pack_dev --config pack.config.js'
+}
+    </pre>
+    <p>
+        上面是开发的时候使用的命令，会启动一个服务器，编辑后立刻可以看到效果。如果是开发完毕，需要进行最终打包：
+    </p>
+    <pre q-code>
+scripts:{
+    'build':'pack_pkg --config pack.config.js'
+}
+    </pre>
+    <p>
+        上面的配置是在
+        <span class="important">package.json</span>
+        中进行添加。
+    </p>
+</template>

@@ -1,0 +1,89 @@
+<template class='nav-view'>
+    <div class="menu">
+        <ul :active='pagename=="basic"?"yes":"no"'>
+            <li>
+                <h3 @click='openPage("basic","top","no")'>如何使用</h3>
+                <ul>
+                    <li>
+                        <h4 @click='doScroll("config")'>添加配置文件</h4>
+                        <ul>
+                            <li>
+                                <h5 @click='doScroll("config-items")'>可配置条目</h5>
+                                <ul>
+                                    <li>
+                                        <h6 @click='doScroll("config-items-entry")'>entry</h6>
+                                    </li>
+                                    <li>
+                                        <h6 @click='doScroll("config-items-output")'>output</h6>
+                                    </li>
+                                    <li>
+                                        <h6 @click='doScroll("config-items-loader")'>loader</h6>
+                                    </li>
+                                    <li>
+                                        <h6 @click='doScroll("config-items-mode")'>mode</h6>
+                                    </li>
+                                    <li>
+                                        <h6 @click='doScroll("config-items-devServer")'>devServer</h6>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h4 @click='doScroll("terminal")'>命令</h4>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <ul :active='pagename=="api"?"yes":"no"'>
+            <li>
+                <h3 @click='openPage("api","top","no")'>接口</h3>
+                <ul>
+                    <li>
+                        <h4 @click='doScroll("merge")'>merge</h4>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div id='root-view' class='view'>
+        <div>
+            <component :is='page'></component>
+        </div>
+    </div>
+</template>
+<script>
+    import fixedScroll from '../../Service/fixedScroll.js';
+
+    let pages = {
+        basic: () => import('./basic.paper'),
+        api: () => import('./api.paper')
+    };
+
+    export default {
+        data() {
+            return {
+                page: null,
+                pagename: ""
+            };
+        },
+        mounted() {
+            let urlJson = this.urlFormat(window.location.href);
+            this.openPage(urlJson.router[1] in pages ? urlJson.router[1] : "basic", urlJson.params.fixed || "top");
+        },
+        methods: {
+            openPage(pagename, fixedName, flag) {
+                pages[pagename]().then(data => {
+                    this.page = data.default;
+                    this.pagename = pagename;
+                    if (flag == 'no') window.location.href = "#/api/" + pagename + "?fixed=" + fixedName;
+                    fixedScroll(fixedName);
+                });
+            },
+            doScroll(fixedName) {
+                window.location.href = "#/api/" + this.pagename + "?fixed=" + fixedName;
+                fixedScroll(fixedName);
+            }
+        }
+    };
+</script>

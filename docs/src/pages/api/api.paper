@@ -1,0 +1,32 @@
+<template class='doc-view'>
+    <header id='fixed-top'>
+        接口
+    </header>
+    <h2 id='fixed-merge'>
+        merge
+    </h2>
+    <pre q-code>
+        const { merge } = require('@nefbl/pack');
+    </pre>
+    <p>
+        此方法主要用于合并配置文件。
+    </p>
+    <p>
+        比如，开发和生产的配置可能存在一些差异，而大部分又是相同的，那么，就可以这样获取一份最终的配置文件：
+    </p>
+    <pre q-code>
+const common = require('./pack.common.js');
+const { merge } = require('@nefbl/pack');
+
+module.exports = merge(common, {
+    mode: "development"
+});
+    </pre>
+    <p>
+        可以看到，在
+        <span class="important">./pack.common.js</span>
+        中配置公共的内容，通过合并的方式，在本文件中配置个性化的内容，比如标记
+        <span class="important">mode: "development"</span>
+        表示是生产环境。
+    </p>
+</template>

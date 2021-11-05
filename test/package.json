@@ -2,8 +2,10 @@
   "name": "test",
   "version": "0.1.0",
   "scripts": {
-    "local-test": "node ../bin/run --config pack.config.js",
-    "npm-test": "nefbl_pack --config pack.config.js"
+    "build": "node ../bin/builder --config pack.prod.js",
+    "dev": "node ../bin/server --config pack.dev.js",
+    "npm-build": "pack_pkg --config pack.prod.js",
+    "npm-dev": "pack_dev --config pack.dev.js"
   },
   "dependencies": {
     "@hai2007/polyfill": "^0.1.1",
@@ -12,7 +14,7 @@
     "sprout-ui": "^0.1.0"
   },
   "devDependencies": {
-    "@nefbl/pack": "0.1.0-alpha.2",
+    "@nefbl/pack": "0.1.0-alpha.3",
     "tslib": "^2.3.1"
   }
 }
