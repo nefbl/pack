@@ -21,7 +21,7 @@
   "bugs": {
     "url": "https://github.com/nefbl/pack/issues"
   },
-  "homepage": "https://github.com/nefbl/pack#readme",
+  "homepage": "https://nefbl.github.io/pack",
   "dependencies": {
     "@hai2007/algorithm": "^0.7.2",
     "@hai2007/nodejs": "^2.0.0",
