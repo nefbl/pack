@@ -1,4 +1,4 @@
-// import normalize from  "@hai2007/style/normalize.css"
+import "@hai2007/style/normalize.css"
 
 import '@hai2007/polyfill/Promise.js'
 
@@ -10,7 +10,5 @@ import doit from './tool'
 
 doit()
 
-// import info from './data/info.json'
-// console.log(info);
-
-// console.log(normalize);
+import info from './data/info.json'
+console.log(info);

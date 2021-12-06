@@ -68,7 +68,7 @@ nodejs.server({
         }
 
         // 如果是来自node_modules的普通文件
-        if (/\/@modules/.test(request.url)) {
+        if (/\/@modules/.test(request.url) && !flag) {
 
             filepath = nodejs.fullPath(request.url.replace(/\/@modules/, './node_modules'), process.cwd());
             content = readFileSync(filepath);

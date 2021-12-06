@@ -16,6 +16,6 @@
   },
   "devDependencies": {
     "@hai2007/algorithm": "^0.7.3",
-    "@nefbl/pack": "0.1.0-alpha.3"
+    "@nefbl/pack": "0.1.0-alpha.5"
   }
 }

@@ -1,6 +1,5 @@
 const pkg = JSON.parse(require('fs').readFileSync('./package.json'));
 
-
 module.exports = {
 
     // 打包入口
@@ -13,12 +12,11 @@ module.exports = {
     loader: [{
         test: /\.css$/,
         handler: [function (source) {
-            return source;
-        }]
-    }, {
-        test: /\.js$/,
-        handler: [function (source) {
-            return source;
+            return "var styleElement = document.createElement('style');\n" +
+                "var head = document.head || document.getElementsByTagName('head')[0];\n" +
+                "styleElement.innerHTML = '" + source.replace(/\n/g, '\\n') + "';\n" +
+                "styleElement.setAttribute('type', 'text/css');" +
+                "head.appendChild(styleElement);";
         }]
     }]
 
