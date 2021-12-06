@@ -13,9 +13,7 @@ module.exports = {
     loader: [{
         test: /\.css$/,
         handler: [function (source) {
-
-
-
+            return source;
         }]
     }, {
         test: /\.js$/,

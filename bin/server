@@ -6,7 +6,7 @@ process.title = 'nefbl-server';
 
 let nodejs = require('@hai2007/nodejs');
 let tool = require('@hai2007/tool');
-let fs = require("fs");
+let readFileSync = require('./modules/readFileSync');
 
 // 首先，获取配置文件
 let config = require('./config')(process);
@@ -18,6 +18,9 @@ nodejs.server({
 
     // 服务器根路径
     contentBase: config.devServer.contentBase,
+
+    // 设置缺省后缀
+    suffix: ['.js', '.ts'],
 
     // 拦截处理
     handler: function (request, response) {
@@ -45,7 +48,7 @@ nodejs.server({
             if (item.test.test(filepath)) {
 
                 let handlers = item.handler;
-                content = fs.readFileSync(filepath, 'utf-8');
+                content = readFileSync(filepath);
 
                 for (let index = handlers.length; index > 0; index--) {
                     let handler = handlers[index - 1];
@@ -62,6 +65,14 @@ nodejs.server({
                 flag = true;
                 break;
             }
+        }
+
+        // 如果是来自node_modules的普通文件
+        if (/\/@modules/.test(request.url)) {
+
+            filepath = nodejs.fullPath(request.url.replace(/\/@modules/, './node_modules'), process.cwd());
+            content = readFileSync(filepath);
+            flag = true;
         }
 
         // 如果是被处理的文件
