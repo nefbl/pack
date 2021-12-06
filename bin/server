@@ -5,6 +5,8 @@
 process.title = 'nefbl-server';
 
 let nodejs = require('@hai2007/nodejs');
+let tool = require('@hai2007/tool');
+let fs = require("fs");
 
 // 首先，获取配置文件
 let config = require('./config')(process);
@@ -20,13 +22,60 @@ nodejs.server({
     // 拦截处理
     handler: function (request, response) {
 
-        let filepath = nodejs.fullPath("./" + request.url, config.devServer.contentBase);
+        let filepath;
 
-        // 如果请求的文件和打包出口文件一致，地址改为打包入口地址即可
-        if (filepath == config.output.file) filepath = config.entry.file;
+        // 修改入口为正确的而非打包的
+        // by 你好2007 南京 2021年12月6日
+        // // 如果请求的文件和打包出口文件一致，地址改为打包入口地址即可
+        // if (filepath == config.output.file) filepath = config.entry.file;
 
+        // 如果是导入node_modules的
+        if (/\/@module/.test(request.url)) {
+            filepath = nodejs.fullPath(request.url.replace(/\/@modules/, './node_modules'), process.cwd());
+        }
 
+        // 否则
+        else {
+            filepath = nodejs.fullPath("./" + request.url, config.devServer.contentBase);
+        }
 
+        let flag = false, content = "";
+
+        for (let item of config.loader) {
+            if (item.test.test(filepath)) {
+
+                let handlers = item.handler;
+                content = fs.readFileSync(filepath, 'utf-8');
+
+                for (let index = handlers.length; index > 0; index--) {
+                    let handler = handlers[index - 1];
+                    let handlerFunction = tool.isFunction(handler) ? handler : require(handler);
+
+                    content = handlerFunction.call({
+
+                        // 文件路径
+                        filepath
+
+                    }, content);
+                }
+
+                flag = true;
+                break;
+            }
+        }
+
+        // 如果是被处理的文件
+        if (flag) {
+            // 写回数据
+            response.writeHead(200, {
+                'content-type': "application/javascript;charset=utf-8"
+            });
+            response.write(require('./modules/urlReplace')(content));
+            response.end();
+
+        }
+
+        return flag;
     }
 
 });

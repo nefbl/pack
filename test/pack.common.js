@@ -1,5 +1,6 @@
 const pkg = JSON.parse(require('fs').readFileSync('./package.json'));
 
+
 module.exports = {
 
     // 打包入口
@@ -11,9 +12,16 @@ module.exports = {
     // 配置对于特殊的文件如何解析
     loader: [{
         test: /\.css$/,
-        handler(source) {
+        handler: [function (source) {
 
-        }
+
+
+        }]
+    }, {
+        test: /\.js$/,
+        handler: [function (source) {
+            return source;
+        }]
     }]
 
 };

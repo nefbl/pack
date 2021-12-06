@@ -37,16 +37,26 @@ module.exports = {
         loader
     </h4>
     <p>
-        可选，对于各种文件如何解析的配置（一般而言，除了js、json等文件，都需要配置对应的解析方法）。
+        可选，对于各种文件如何解析的配置（一般而言，除了js、json等文件，都需要配置对应的解析方法，如果你想作为模块导入的话）。
     </p>
     <pre q-code>
 loader: [{
     test: /\.(js|ts)$/,
-    handler(source) {
-        // 进行处理
-    }
+    handler:Array<Function|String>
 },...]
     </pre>
+    <p>
+        handler的值是一个数组，成员可以是函数或字符串（处理顺序从右往左依次进行），如果是函数，格式如下：
+    </p>
+    <pre q-code>
+function(source) {
+    // 进行处理
+    // 当前上下文this中包含了一些有用的信息
+}
+    </pre>
+    <p>
+        如果是字符串，会引入字符串对应的包进行处理，包应该导出一个函数，格式和上面函数一样。
+    </p>
     <h4 id='fixed-config-items-task'>
         task
     </h4>
