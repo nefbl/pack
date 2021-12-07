@@ -1,4 +1,4 @@
-let readFileSync = require('./modules/readFileSync');
+let readFileSync = require('./tool/readFileSync');
 let tool = require('@hai2007/tool');
 
 module.exports = function (filepath, config) {

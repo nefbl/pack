@@ -1,5 +1,3 @@
-const pkg = JSON.parse(require('fs').readFileSync('./package.json'));
-
 module.exports = {
 
     // 打包入口

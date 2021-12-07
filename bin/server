@@ -5,7 +5,7 @@
 process.title = 'nefbl-server';
 
 let nodejs = require('@hai2007/nodejs');
-let readFileSync = require('./modules/readFileSync');
+let readFileSync = require('./tool/readFileSync');
 const useLoader = require('./useLoader');
 
 // 首先，获取配置文件
@@ -45,31 +45,6 @@ nodejs.server({
         let temp = useLoader(filepath, config);
         let flag = temp.flag, content = temp.content;
 
-        // 对loader的处理抽取成公共的
-        // by 你好2007 南京 2021年12月7日
-        // for (let item of config.loader) {
-        //     if (item.test.test(filepath)) {
-
-        //         let handlers = item.handler;
-        //         content = readFileSync(filepath);
-
-        //         for (let index = handlers.length; index > 0; index--) {
-        //             let handler = handlers[index - 1];
-        //             let handlerFunction = tool.isFunction(handler) ? handler : require(handler);
-
-        //             content = handlerFunction.call({
-
-        //                 // 文件路径
-        //                 filepath
-
-        //             }, content);
-        //         }
-
-        //         flag = true;
-        //         break;
-        //     }
-        // }
-
         // 如果是来自node_modules的普通文件
         if (/\/@modules/.test(request.url) && !flag) {
 
@@ -84,7 +59,7 @@ nodejs.server({
             response.writeHead(200, {
                 'content-type': "application/javascript;charset=utf-8"
             });
-            response.write(require('./modules/urlReplace')(content));
+            response.write(content.replace(/(import [^'"]*)(['|"])([^./].+)\2/g, '$1$2/@modules/$3$2'));
             response.end();
 
         }
