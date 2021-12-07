@@ -1,3 +1,4 @@
+(function(window,undefined){
 /**
  * ************************* @nefbl/pack ********************
  * **********************************************************
@@ -12,7 +13,7 @@ window.nefbl_pack_bundle = window.nefbl_pack_bundle || {};
 
 // 模块加载
 function nefbl_pack_getFile(url) {
-    new Promise(function (resolve) {
+    return new Promise(function (resolve) {
 
         // 如果加载过了
         if (window.nefbl_pack_bundle[url]) resolve(window.nefbl_pack_bundle[url]);
@@ -40,7 +41,7 @@ function nefbl_pack_getFile(url) {
     });
 }
 
-function nefbl_pack_getBundle(url) {
+window.nefbl_pack_getBundle = function (url) {
 
     var params = arguments;
 
@@ -64,4 +65,5 @@ function nefbl_pack_getBundle(url) {
 /***************************** end ***************************/
 
 
-undefined
+window.nefbl_pack_getBundle('./build/index@bundle.js');
+})(window);

@@ -1,30 +1,28 @@
 /**
  * (function(){
- *  var bundle={}
+ *  window.nefbl_pack_bundle[url]={}
  */
 
 /**
- * bundle["__default__"]=function(){}
+ * window.nefbl_pack_bundle[url]["__default__"]=function(){}
  */
 export default function () {
     console.log('被调用了这个方法')
 }
 
 /**
- * bundle["doit1"]=function(){}
+ * window.nefbl_pack_bundle[url]["doit1"]=function(){}
  */
 export let doit1 = function (info) {
     console.log(1, info);
 };
 
 /**
- * bundle["info1"]='信息哦';
+ * window.nefbl_pack_bundle[url]["info1"]='信息哦';
  */
 export let info1 = '信息哦';
 
 /**
- *
- * window.nefbl_pack_bundle[fullUrl]=bundle;
  *
  * })();
  *

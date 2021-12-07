@@ -6,7 +6,7 @@ module.exports = {
     entry: './src/index.js',
 
     // 打包出口
-    output: 'build/main@v' + pkg.version + '.js',
+    output: 'build/main.js',
 
     // 配置对于特殊的文件如何解析
     loader: [{

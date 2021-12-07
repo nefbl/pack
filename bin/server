@@ -5,8 +5,8 @@
 process.title = 'nefbl-server';
 
 let nodejs = require('@hai2007/nodejs');
-let tool = require('@hai2007/tool');
 let readFileSync = require('./modules/readFileSync');
+const useLoader = require('./useLoader');
 
 // 首先，获取配置文件
 let config = require('./config')(process);
@@ -42,30 +42,33 @@ nodejs.server({
             filepath = nodejs.fullPath("./" + request.url, config.devServer.contentBase);
         }
 
-        let flag = false, content = "";
+        let temp = useLoader(filepath, config);
+        let flag = temp.flag, content = temp.content;
 
-        for (let item of config.loader) {
-            if (item.test.test(filepath)) {
+        // 对loader的处理抽取成公共的
+        // by 你好2007 南京 2021年12月7日
+        // for (let item of config.loader) {
+        //     if (item.test.test(filepath)) {
 
-                let handlers = item.handler;
-                content = readFileSync(filepath);
+        //         let handlers = item.handler;
+        //         content = readFileSync(filepath);
 
-                for (let index = handlers.length; index > 0; index--) {
-                    let handler = handlers[index - 1];
-                    let handlerFunction = tool.isFunction(handler) ? handler : require(handler);
+        //         for (let index = handlers.length; index > 0; index--) {
+        //             let handler = handlers[index - 1];
+        //             let handlerFunction = tool.isFunction(handler) ? handler : require(handler);
 
-                    content = handlerFunction.call({
+        //             content = handlerFunction.call({
 
-                        // 文件路径
-                        filepath
+        //                 // 文件路径
+        //                 filepath
 
-                    }, content);
-                }
+        //             }, content);
+        //         }
 
-                flag = true;
-                break;
-            }
-        }
+        //         flag = true;
+        //         break;
+        //     }
+        // }
 
         // 如果是来自node_modules的普通文件
         if (/\/@modules/.test(request.url) && !flag) {

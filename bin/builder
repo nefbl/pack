@@ -17,4 +17,4 @@ let scriptContent = fs.readFileSync(nodejs.fullPath('./script.js', __dirname), '
 let evalContent = require('./modules/analyseBundle')(config.entry.file, config);
 
 // 写入入口文件
-fs.writeFileSync(config.output.file, scriptContent + "\n\n" + evalContent);
+fs.writeFileSync(config.output.file, "(function(window,undefined){\n" + scriptContent + "\n\n" + evalContent + "\n})(window);");

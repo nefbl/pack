@@ -9,6 +9,8 @@ module.exports = function (_process) {
     // 首先，获取配置文件
     let config = require(nodejs.fullPath(parsed.config[0], process.cwd()));
 
+    config.context = process.cwd();
+
     // 入口地址校对
     config.entry = {
         file: nodejs.fullPath(config.entry)
