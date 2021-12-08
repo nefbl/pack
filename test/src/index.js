@@ -14,8 +14,8 @@
 
 // doit()
 
-import info from './data/info'
-console.log(info);
+// import info from './data/info'
+// console.log(info);
 
 import {ref} from 'nefbl';
 
