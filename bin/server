@@ -4,7 +4,7 @@
 
 process.title = 'nefbl-server';
 
-const fs = require('fs');
+const getFilePath = require('./tool/getFilePath');
 const nodejs = require('@hai2007/nodejs');
 const readFileSync = require('./tool/readFileSync');
 const useLoader = require('./tool/useLoader');
@@ -35,7 +35,7 @@ nodejs.server({
             filepath = nodejs.fullPath(request.url.replace(/\/@modules/, './node_modules'), process.cwd());
 
             // 如果文件不存在，就应该使用main等关键字修改路径
-            if (!fs.existsSync(filepath) || fs.lstatSync(filepath).isDirectory()) {
+            if (getFilePath(filepath) === null) {
                 filepath = getMainUrl(filepath);
             }
         }

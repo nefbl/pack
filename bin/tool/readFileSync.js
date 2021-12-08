@@ -1,18 +1,12 @@
 const fs = require('fs');
-const suffixArray = require('../config/suffix');
+const getFilePath = require('./getFilePath');
 
 module.exports = function (filePath) {
+    let _filePath = getFilePath(filePath);
 
-    for (let suffix of ['', ...suffixArray]) {
-        let _filePath = filePath + suffix;
+    // 如果文件存在，返回内容
+    if (_filePath !== null) return fs.readFileSync(_filePath, 'utf-8');
 
-        if (fs.existsSync(_filePath) && !fs.lstatSync(_filePath).isDirectory()) {
-            let content = fs.readFileSync(_filePath, 'utf-8');
-
-            return content;
-
-        }
-    }
-
+    // 否则
     return null;
 };

@@ -1,17 +1,11 @@
 const tool = require('@hai2007/tool');
 const fs = require('fs');
-const suffixArray = require('../config/suffix');
+const getFilePath = require('./getFilePath');
 
 module.exports = function (filepath, config) {
 
     let content = null;
-
-    for (let suffix of ['', ...suffixArray]) {
-        let _filepath = filepath + suffix;
-        if (fs.existsSync(_filepath) && !fs.lstatSync(_filepath).isDirectory()) {
-            filepath = _filepath;
-        }
-    }
+    filepath = getFilePath(filepath);
 
     for (let item of config.loader) {
         if (item.test.test(filepath)) {
