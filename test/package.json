@@ -12,6 +12,7 @@
     "@hai2007/style": "^0.3.0",
     "@hai2007/tool": "^1.0.0",
     "clunch": "^2.3.4",
+    "nefbl": "^0.2.6",
     "sprout-ui": "^0.1.0"
   },
   "devDependencies": {

@@ -6,7 +6,8 @@ process.title = 'nefbl-server';
 
 let nodejs = require('@hai2007/nodejs');
 let readFileSync = require('./tool/readFileSync');
-const useLoader = require('./useLoader');
+const useLoader = require('./tool/useLoader');
+const suffixArray = require('./config/suffix');
 
 // 首先，获取配置文件
 let config = require('./config')(process);
@@ -20,7 +21,7 @@ nodejs.server({
     contentBase: config.devServer.contentBase,
 
     // 设置缺省后缀
-    suffix: ['.js', '.ts'],
+    suffix: suffixArray,
 
     // 拦截处理
     handler: function (request, response) {
@@ -42,29 +43,28 @@ nodejs.server({
             filepath = nodejs.fullPath("./" + request.url, config.devServer.contentBase);
         }
 
-        let temp = useLoader(filepath, config);
-        let flag = temp.flag, content = temp.content;
+        let content = useLoader(filepath, config);
 
         // 如果是来自node_modules的普通文件
-        if (/\/@modules/.test(request.url) && !flag) {
+        if (/\/@modules/.test(request.url) && content === null) {
 
             filepath = nodejs.fullPath(request.url.replace(/\/@modules/, './node_modules'), process.cwd());
             content = readFileSync(filepath);
-            flag = true;
         }
 
         // 如果是被处理的文件
-        if (flag) {
+        if (content !== null) {
             // 写回数据
             response.writeHead(200, {
-                'content-type': "application/javascript;charset=utf-8"
+                'content-type': "application/javascript;charset=utf-8",
+                'handler': "nefbl-server"
             });
             response.write(content.replace(/(import [^'"]*)(['|"])([^./].+)\2/g, '$1$2/@modules/$3$2'));
             response.end();
 
         }
 
-        return flag;
+        return content !== null;
     }
 
 });

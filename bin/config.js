@@ -32,14 +32,6 @@ module.exports = function (_process) {
 
     config.loader = config.loader || [];
 
-    // json
-    config.loader.push({
-        test: /\.json$/,
-        handler: [function (source) {
-            return source;
-        }]
-    });
-
     // javascript
     config.loader.push({
         test: /\.js$/,

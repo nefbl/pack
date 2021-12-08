@@ -1,33 +1,22 @@
-import '@hai2007/style/normalize.css'
+// import '@hai2007/style/normalize.css'
 
-/**
- * nefbl_pack_getBundle(url).then(()=>{
- *      余下的代码
- * });
- */
-import '@hai2007/polyfill/Promise.js'
+// import '@hai2007/polyfill/Promise.js'
 
-/**
- * nefbl_pack_getBundle(url,"__default__").then((Clunch)=>{
- *      余下的代码
- * });
- */
-import Clunch from 'clunch/src/core/index';
+// import Clunch from 'clunch/src/core/index';
 
-/**
- * nefbl_pack_getBundle(url,"doit1", "info1").then((doit1, info1)=>{
- *      余下的代码
- * });
- */
-import { doit1, info1 } from './tool'
+// import { doit1, info1 } from './tool'
 
-doit1(info1)
+// doit1(info1)
 
-console.log(Clunch);
+// console.log(Clunch);
 
-import doit from './tool'
+// import doit from './tool'
 
-doit()
+// doit()
 
-import info from './data/info.json'
+import info from './data/info'
 console.log(info);
+
+import {ref} from 'nefbl';
+
+console.log(ref);

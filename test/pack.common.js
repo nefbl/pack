@@ -7,15 +7,21 @@ module.exports = {
     output: 'build/main.js',
 
     // 配置对于特殊的文件如何解析
-    loader: [{
-        test: /\.css$/,
-        handler: [function (source) {
-            return "var styleElement = document.createElement('style');\n" +
-                "var head = document.head || document.getElementsByTagName('head')[0];\n" +
-                "styleElement.innerHTML = '" + source.replace(/\n/g, '\\n') + "';\n" +
-                "styleElement.setAttribute('type', 'text/css');" +
-                "head.appendChild(styleElement);";
-        }]
-    }]
-
+    loader: [
+        {
+            test: /\.css$/,
+            handler: [function (source) {
+                return "var styleElement = document.createElement('style');\n" +
+                    "var head = document.head || document.getElementsByTagName('head')[0];\n" +
+                    "styleElement.innerHTML = '" + source.replace(/\n/g, '\\n') + "';\n" +
+                    "styleElement.setAttribute('type', 'text/css');" +
+                    "head.appendChild(styleElement);";
+            }]
+        }, {
+            test: /\.json$/,
+            handler: [function (source) {
+                return "export default " + source;
+            }]
+        }
+    ]
 };
