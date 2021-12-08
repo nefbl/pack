@@ -8,3 +8,7 @@ v0.1.1:
     changes:
       -  在开发模式dev下，添加自动校对入口功能
       -  对node_modules中的包，兼容package.json中定义默认入口的形式
+v0.1.2:
+    date:2021-12-08
+    changes:
+      -  修复loader使用路径配置时错误的上下文
