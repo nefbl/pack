@@ -4,8 +4,8 @@
 
 process.title = 'nefbl-builder';
 
-const analyseFile = require('./build/analyseFile');
 const nodejs = require('@hai2007/nodejs');
+const appendBundle = require('./build/appendBundle');
 
 // 首先，获取配置文件
 let config = require('./config')(process);
@@ -14,25 +14,29 @@ let config = require('./config')(process);
 // 除了入口文件外，比如遇到 ()=>import() 这样的懒加载语句也会扩充下面的语句
 let needAnalyseFiles = [{
     source: config.entry.file,
-    target: config.output.file
+    target: config.output.file,
+
+    // 标记是根bundle
+    isRoot: true
 }];
+
+// 记录根bundle已经解析的依赖文件
+let rootBundle = [];
 
 while (needAnalyseFiles.length > 0) {
     let needAnalyseFile = needAnalyseFiles.shift();
+
+    // 记录当前bundle已经解析的依赖文件
+    let scopeBundle = [];
 
     nodejs.print(`当前分析的独立bundle文件:
     ● ${needAnalyseFile.source} → ${needAnalyseFile.target}
 `);
 
-    // 分析文件并返回收集的需要独立分析的懒加载文件
-    let needAnalyseFiles_temp = analyseFile(needAnalyseFile.source, config);
+    // 分析出当前bundle文件
+    let bundle = appendBundle(needAnalyseFile.source);
 
-    for (let temp of needAnalyseFiles_temp.bundle) {
-        needAnalyseFiles.push(temp);
-    }
-
-    // 写入目标
-    console.log(needAnalyseFiles_temp.code);
+    console.log(bundle);
 
 }
 
