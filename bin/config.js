@@ -34,6 +34,13 @@ module.exports = function (_process) {
 
     }
 
+    // 校对重定向
+    let redirect = {};
+    for (let key in config.redirect) {
+        redirect["\/@modules\/" + key] = config.redirect[key];
+    }
+    config.redirect = redirect;
+
     config.loader = config.loader || [];
     for (let i = 0; i < config.loader.length; i++) {
         for (let j = 0; j < config.loader[i].handler.length; j++) {
@@ -69,7 +76,7 @@ module.exports = function (_process) {
     config.loader.push({
         test: /\.(ts|js)$/,
         handler: [function (source) {
-            if (/node_modules/.test(this.filepath)) return source;
+            if (/node_modules/.test(this.filepath) && !/sprout-ui/.test(this.filepath)) return source;
 
             return babel.transformFileSync(this.filepath, {
                 "presets": [["@babel/preset-env", {

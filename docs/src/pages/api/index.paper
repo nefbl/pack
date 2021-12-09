@@ -17,6 +17,9 @@
                                         <h6 @click='doScroll("config-items-output")'>output</h6>
                                     </li>
                                     <li>
+                                        <h6 @click='doScroll("config-items-redirect")'>redirect</h6>
+                                    </li>
+                                    <li>
                                         <h6 @click='doScroll("config-items-loader")'>loader</h6>
                                     </li>
                                     <li>

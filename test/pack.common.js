@@ -6,6 +6,11 @@ module.exports = {
     // 打包出口
     output: 'build/main.js',
 
+    // 对导入路径重定向
+    redirect: {
+        'nefbl': "./src/lib/nefbl.js"
+    },
+
     // 配置对于特殊的文件如何解析
     loader: [
         {
@@ -22,7 +27,7 @@ module.exports = {
             handler: [function (source) {
                 return "export default " + source;
             }]
-        },{
+        }, {
             test: /\.clunch$/,
             handler: ['clunch/loader.js']
         }

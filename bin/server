@@ -32,7 +32,16 @@ nodejs.server({
 
         // 如果是导入node_modules的
         if (/\/@module/.test(request.url)) {
-            filepath = nodejs.fullPath(request.url.replace(/\/@modules/, './node_modules'), process.cwd());
+
+            // 如果是需要重定向的
+            if (request.url in config.redirect) {
+                filepath = nodejs.fullPath(config.redirect[request.url], process.cwd());
+            }
+
+            // 否则，直接去node_modules中寻找
+            else {
+                filepath = nodejs.fullPath(request.url.replace(/\/@modules/, './node_modules'), process.cwd());
+            }
 
             // 如果文件不存在，就应该使用main等关键字修改路径
             if (getFilePath(filepath) === null) {
