@@ -32,14 +32,14 @@ module.exports = function (_process) {
         // 服务器校对
         config.devServer.contentBase = nodejs.fullPath(config.devServer.contentBase);
 
-    }
+        // 校对重定向
+        let redirect = {};
+        for (let key in config.redirect) {
+            redirect["\/@modules\/" + key] = config.redirect[key];
+        }
+        config.redirect = redirect;
 
-    // 校对重定向
-    let redirect = {};
-    for (let key in config.redirect) {
-        redirect["\/@modules\/" + key] = config.redirect[key];
     }
-    config.redirect = redirect;
 
     config.loader = config.loader || [];
     for (let i = 0; i < config.loader.length; i++) {

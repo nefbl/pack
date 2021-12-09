@@ -3,3 +3,37 @@
 'use strict';
 
 process.title = 'nefbl-builder';
+
+const analyseFile = require('./build/analyseFile');
+const nodejs = require('@hai2007/nodejs');
+
+// 首先，获取配置文件
+let config = require('./config')(process);
+
+// 需要分析的独立bundle文件
+// 除了入口文件外，比如遇到 ()=>import() 这样的懒加载语句也会扩充下面的语句
+let needAnalyseFiles = [{
+    source: config.entry.file,
+    target: config.output.file
+}];
+
+while (needAnalyseFiles.length > 0) {
+    let needAnalyseFile = needAnalyseFiles.shift();
+
+    nodejs.print(`当前分析的独立bundle文件:
+    ● ${needAnalyseFile.source} → ${needAnalyseFile.target}
+`);
+
+    // 分析文件并返回收集的需要独立分析的懒加载文件
+    let needAnalyseFiles_temp = analyseFile(needAnalyseFile.source, config);
+
+    for (let temp of needAnalyseFiles_temp.bundle) {
+        needAnalyseFiles.push(temp);
+    }
+
+    // 写入目标
+    console.log(needAnalyseFiles_temp.code);
+
+}
+
+nodejs.log('打包完成\n');
