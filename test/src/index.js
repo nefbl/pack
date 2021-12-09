@@ -20,3 +20,7 @@ console.log(info);
 import 'nefbl';
 
 console.log(Nefbl);
+
+import image from './image.clunch';
+
+console.log(image);

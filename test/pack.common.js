@@ -22,6 +22,9 @@ module.exports = {
             handler: [function (source) {
                 return "export default " + source;
             }]
+        },{
+            test: /\.clunch$/,
+            handler: ['clunch/loader.js']
         }
     ]
 };

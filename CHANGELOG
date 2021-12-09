@@ -12,3 +12,7 @@ v0.1.2:
     date:2021-12-08
     changes:
       -  修复loader使用路径配置时错误的上下文
+v0.1.3:
+    date:2021-12-09
+    changes:
+      -  针对nefbl框架内置loader
