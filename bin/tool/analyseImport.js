@@ -1,4 +1,8 @@
-module.exports = function (statement) {
+const nodejs = require('@hai2007/nodejs');
+const getFilePath = require('./getFilePath');
+const getMainUrl = require('./getMainUrl');
+
+module.exports = function (statement, filecontext, context) {
     let statementArray = statement.replace(/^import +/, '').split('from');
     let url = statementArray.pop();
     let args = [];
@@ -16,9 +20,16 @@ module.exports = function (statement) {
         }
     }
 
-    return {
-        url: url.trim().replace(/['"]/g, ''),
-        args
-    };
+    // 去掉字符串两边的空白和多余符号
+    url = url.trim().replace(/['"]/g, '');
 
+    // 路径变成全路径
+    if (/^[.|\/]/.test(url)) {
+        url = getFilePath(nodejs.fullPath(url, filecontext));
+    } else {
+        url = nodejs.fullPath("node_modules/" + url, context);
+        url = getFilePath(url) || getMainUrl(url);
+    }
+
+    return { url, args };
 };

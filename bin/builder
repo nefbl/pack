@@ -34,7 +34,7 @@ while (needAnalyseFiles.length > 0) {
 `);
 
     // 分析出当前bundle文件
-    let bundle = appendBundle(needAnalyseFile.source);
+    let bundle = appendBundle(needAnalyseFile.source, config.context);
 
     console.log(bundle);
 
