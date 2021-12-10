@@ -20,3 +20,6 @@ console.log(info);
 import image from './image.clunch';
 
 console.log(image);
+
+
+export default '你好呀';

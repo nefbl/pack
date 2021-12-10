@@ -1,11 +1,11 @@
 const nodejs = require('@hai2007/nodejs');
-const getFilePath = require('./getFilePath');
-const getMainUrl = require('./getMainUrl');
+const getFilePath = require('../tool/getFilePath');
+const getMainUrl = require('../tool/getMainUrl');
 
 module.exports = function (statement, filecontext, context) {
     let statementArray = statement.replace(/^import +/, '').split('from');
     let url = statementArray.pop();
-    let args = [];
+    let args = [], def = '';
 
     if (statementArray.length > 0) {
         if (statementArray[0].indexOf('{') > -1) {
@@ -16,6 +16,7 @@ module.exports = function (statement, filecontext, context) {
             }
 
         } else {
+            def = statementArray[0];
             args = ['__default__'];
         }
     }
@@ -31,5 +32,5 @@ module.exports = function (statement, filecontext, context) {
         url = getFilePath(url) || getMainUrl(url);
     }
 
-    return { url, args };
+    return { url, args, def };
 };

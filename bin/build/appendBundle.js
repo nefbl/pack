@@ -1,6 +1,7 @@
-const analyseImport = require('../tool/analyseImport');
+const analyseImport = require('./analyseImport');
 const readFileSync = require('../tool/readFileSync');
 const nodejs = require('@hai2007/nodejs');
+const toInnerImport = require('./toInnerImport');
 
 module.exports = function appendBundle(filepath, context) {
     let source = readFileSync(filepath);
@@ -14,9 +15,9 @@ module.exports = function appendBundle(filepath, context) {
 
         // 获取导入语句的信息
         let importResult = analyseImport(importStatement.replace(/;$/, ''), filecontext, context);
-        console.log(importResult);
 
-        source = source.replace(importStatement, "");
+        // 原生的导入语句改成内部可以支持的写法
+        source = source.replace(importStatement, toInnerImport(importResult));
     }
 
     console.log(source);
