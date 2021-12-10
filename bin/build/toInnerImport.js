@@ -1,14 +1,23 @@
 module.exports = function (importResult) {
 
-    let args = "";
-    for (let arg of importResult.args) {
-        if (arg == '__default__') {
-            args += arg + ":" + importResult.def + ",";
-        } else {
-            args += arg + ",";
+    let argsCode = "";
+
+    // 需要解析参数结构
+    if (importResult.args.length != 0) {
+
+        let args = "";
+        for (let arg of importResult.args) {
+            if (arg == '__default__') {
+                args += arg + ":" + importResult.def + ",";
+            } else {
+                args += arg + ",";
+            }
         }
+
+        argsCode = `let {${args.replace(/\,$/, '')}} = `;
+
     }
 
-    return `let {${args.replace(/\,$/, '')}} = window.__nefbl_pack__getBundle('${importResult.url}'');`;
+    return `${argsCode}window.__nefbl_pack__getBundle('${importResult.url}');`;
 
 };

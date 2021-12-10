@@ -22,4 +22,4 @@ import image from './image.clunch';
 console.log(image);
 
 
-export default '你好呀';
+// export default '你好呀';

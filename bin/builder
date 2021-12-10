@@ -6,6 +6,7 @@ process.title = 'nefbl-builder';
 
 const nodejs = require('@hai2007/nodejs');
 const appendBundle = require('./build/appendBundle');
+const fs = require('fs');
 
 // 首先，获取配置文件
 let config = require('./config')(process);
@@ -25,19 +26,31 @@ let rootBundle = [];
 
 while (needAnalyseFiles.length > 0) {
     let needAnalyseFile = needAnalyseFiles.shift();
+    let bundleCode = "";
+
+    // 如果是根bundle，需要搭载基本的方法
+    if (needAnalyseFile.isRoot) {
+        bundleCode = fs.readFileSync(nodejs.fullPath('./build/static.js', __dirname), 'utf-8');
+        bundleCode = "/******/\n" + bundleCode.replace(/^/mg, '/******/  ') + "\n/************************************************************************/\n/******/\n";
+    }
 
     // 记录当前bundle已经解析的依赖文件
     let scopeBundle = [];
 
-    nodejs.print(`当前分析的独立bundle文件:
+    nodejs.log(`当前分析的独立bundle文件:
     ● ${needAnalyseFile.source} → ${needAnalyseFile.target}
 `);
 
     // 分析出当前bundle文件
-    let bundle = appendBundle(needAnalyseFile.source, config.context);
+    bundleCode += appendBundle(needAnalyseFile.source, config.context);
 
-    console.log(bundle);
+    if (needAnalyseFile.isRoot) {
 
+        // 整个程序由主bundle启动
+        bundleCode += `\nwindow.__nefbl_pack__bundleSrc__['${needAnalyseFile.source}']();`;
+    }
+
+    fs.writeFileSync(needAnalyseFile.target, bundleCode);
 }
 
-nodejs.log('打包完成\n');
+nodejs.log('\n打包完成\n');

@@ -1,10 +1,6 @@
 <template>
     <header>
         <span>@nefbl/pack</span>
-        <i class='tips'
-            style='font-style: normal;background-color: #3661a7;color:white;font-size: 12px;padding:5px 10px;margin-left: 50px;line-height: 2em;display: inline-block;z-index: 7;position: relative;'>
-            温馨提示：目前只完成了dev模式，一个借助浏览器原生mode实现，<br />因为核心目的是探索打包机制，目前dev的探索已经得到了目的，<br />build待有必要再继续完成。
-        </i>
         <nav>
             <span @click='loadpage("begin","no")' :active='url=="begin"?"yes":"no"'>
                 开始

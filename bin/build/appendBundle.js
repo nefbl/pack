@@ -4,12 +4,15 @@ const nodejs = require('@hai2007/nodejs');
 const toInnerImport = require('./toInnerImport');
 
 module.exports = function appendBundle(filepath, context) {
+    nodejs.log("    ➟ " + filepath);
+
     let source = readFileSync(filepath);
     let importStatement = null;
 
     // 获取当前路径上下文
     let filecontext = nodejs.fullPath('../', filepath);
 
+    // 【1】导入
     while (importStatement = /import[^'"]*(['|"]).+\1;*/.exec(source)) {
         importStatement = importStatement[0];
 
@@ -20,6 +23,13 @@ module.exports = function appendBundle(filepath, context) {
         source = source.replace(importStatement, toInnerImport(importResult));
     }
 
-    console.log(source);
+    // 【2】导出
+    source += 'return {};'
+
+    return `
+/*************************** [bundle] ****************************/
+window.__nefbl_pack__bundleSrc__['${filepath}']=function(){
+    ${source}
+}`;
 
 };
