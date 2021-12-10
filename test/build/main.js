@@ -1,4 +1,7 @@
 /******/
+/******/  // @nefbl/pack Bootstrap
+/******/  // （ https://nefbl.github.io/pack/ ）
+/******/  
 /******/  // 记录bundle的函数源码
 /******/  window.__nefbl_pack__bundleSrc__ = {};
 /******/  
@@ -22,6 +25,7 @@
 
 /*************************** [bundle] ****************************/
 window.__nefbl_pack__bundleSrc__['/Users/kapok/hai2007/nefbl/pack/test/src/index.js']=function(){
+    let __nefbl_pack__scope_bundle__={};
     window.__nefbl_pack__getBundle('/Users/kapok/hai2007/nefbl/pack/test/node_modules/@hai2007/style/normalize.css');
 
 window.__nefbl_pack__getBundle('/Users/kapok/hai2007/nefbl/pack/test/node_modules/@hai2007/polyfill/Promise.js');
@@ -45,8 +49,17 @@ let {__default__:image } = window.__nefbl_pack__getBundle('/Users/kapok/hai2007/
 
 console.log(image);
 
+__nefbl_pack__scope_bundle__.__default__= '你好呀';
+__nefbl_pack__scope_bundle__.key = '1';
+__nefbl_pack__scope_bundle__.doit=function() {
+    // todo
+}
 
-// export default '你好呀';
-return {};
+__nefbl_pack__scope_bundle__.doit1 = function () {
+
+};
+
+
+    return __nefbl_pack__scope_bundle__;
 }
 window.__nefbl_pack__bundleSrc__['/Users/kapok/hai2007/nefbl/pack/test/src/index.js']();

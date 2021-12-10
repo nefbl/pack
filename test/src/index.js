@@ -21,5 +21,13 @@ import image from './image.clunch';
 
 console.log(image);
 
+export default '你好呀';
+export let key = '1';
+export function doit() {
+    // todo
+}
 
-// export default '你好呀';
+export var doit1 = function () {
+
+};
+

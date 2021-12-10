@@ -5,7 +5,7 @@
 process.title = 'nefbl-builder';
 
 const nodejs = require('@hai2007/nodejs');
-const appendBundle = require('./build/appendBundle');
+const analyseBundle = require('./build/analyseBundle');
 const fs = require('fs');
 
 // 首先，获取配置文件
@@ -42,7 +42,7 @@ while (needAnalyseFiles.length > 0) {
 `);
 
     // 分析出当前bundle文件
-    bundleCode += appendBundle(needAnalyseFile.source, config.context);
+    bundleCode += analyseBundle(needAnalyseFile.source, config.context);
 
     if (needAnalyseFile.isRoot) {
 

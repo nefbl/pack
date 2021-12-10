@@ -1,3 +1,6 @@
+// @nefbl/pack Bootstrap
+// （ https://nefbl.github.io/pack/ ）
+
 // 记录bundle的函数源码
 window.__nefbl_pack__bundleSrc__ = {};
 
