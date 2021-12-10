@@ -22,27 +22,30 @@ let needAnalyseFiles = [{
 }];
 
 // 记录根bundle已经解析的依赖文件
-let rootBundle = [];
+global.__nefbl_pack__rootBundle__ = [];
 
 while (needAnalyseFiles.length > 0) {
     let needAnalyseFile = needAnalyseFiles.shift();
-    let bundleCode = "";
 
+    // 记录当前bundle已经解析的依赖文件
+    global.__nefbl_pack__currentBundle__ = [];
+
+    // 记录当前解析的是否是根bundle
+    global.__nefbl_pack__isRootBundle__ = needAnalyseFile.isRoot;
+
+    let bundleCode = "";
     // 如果是根bundle，需要搭载基本的方法
     if (needAnalyseFile.isRoot) {
         bundleCode = fs.readFileSync(nodejs.fullPath('./build/static.js', __dirname), 'utf-8');
         bundleCode = "/******/\n" + bundleCode.replace(/^/mg, '/******/  ') + "\n/************************************************************************/\n/******/\n";
     }
 
-    // 记录当前bundle已经解析的依赖文件
-    let scopeBundle = [];
-
     nodejs.log(`当前分析的独立bundle文件:
     ● ${needAnalyseFile.source} → ${needAnalyseFile.target}
 `);
 
     // 分析出当前bundle文件
-    bundleCode += analyseBundle(needAnalyseFile.source, config.context);
+    bundleCode += analyseBundle(needAnalyseFile.source, config);
 
     if (needAnalyseFile.isRoot) {
 

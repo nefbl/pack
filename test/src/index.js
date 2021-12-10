@@ -1,4 +1,4 @@
-// import '@hai2007/style/normalize.css'
+import '@hai2007/style/normalize.css'
 
 // import '@hai2007/polyfill/Promise.js'
 
@@ -8,7 +8,7 @@ import { doit1, info1 } from './tool'
 
 doit1(info1)
 
-console.log(Clunch);
+// console.log(Clunch);
 
 import doit from './tool'
 
