@@ -5,7 +5,8 @@
     "build": "node ../bin/builder --config pack.prod.js",
     "dev": "node ../bin/server --config pack.dev.js",
     "npm-build": "pack_pkg --config pack.prod.js",
-    "npm-dev": "pack_dev --config pack.dev.js"
+    "npm-dev": "pack_dev --config pack.dev.js",
+    "debug": "echo 'chrome://inspect/#devices' && node --inspect-brk ../bin/builder --config pack.prod.js"
   },
   "dependencies": {
     "@hai2007/polyfill": "^0.1.1",

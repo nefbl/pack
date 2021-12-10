@@ -22,6 +22,20 @@
 
 具体的使用你可以[查阅文档](https://nefbl.github.io/pack)哦~
 
+## How to debug?
+
+```
+npm run debug
+```
+
+在需要调试的地方提前添加“ debugger ”语句，这和普通的web端调试一样，接着，在chrome浏览器地址栏中输入：
+
+```
+chrome://inspect/#devices
+```
+
+接着，请点击“ Open dedicated DevTools for Node ”后进入调试界面。
+
 开源协议
 ---------------------------------------
 [MIT](https://github.com/nefbl/pack/blob/master/LICENSE)

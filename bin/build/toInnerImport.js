@@ -14,7 +14,7 @@ module.exports = function (importResult) {
             }
         }
 
-        argsCode = `let {${args.replace(/\,$/, '')}} = `;
+        argsCode = `var {${args.replace(/\,$/, '')}} = `;
 
     }
 

@@ -34,12 +34,13 @@ module.exports = function analyseBundle(filepath, config) {
     let filecontext = nodejs.fullPath('../', filepath);
 
     // 读取具体代码
-    let source = useLoader(filepath, config) || readFileSync(filepath);
+    let source = (useLoader(filepath, config) || readFileSync(filepath)) + "\n  ";
+
 
     //【1】导入
     let importStatement = null;
-    while (importStatement = /(?:^|\n)import[^'"]*(['|"]).+\1;*/.exec(source)) {
-        importStatement = importStatement[0].replace(/^\n/, '');
+    while (importStatement = /(?:^|\n) *import[^'"]*(['|"]).+\1;*/.exec(source)) {
+        importStatement = importStatement[0].replace(/^\n/, '').trim();
 
         // 获取导入语句的信息
         let importResult = analyseImport(importStatement.replace(/;$/, ''), filecontext, config.context);
@@ -53,8 +54,8 @@ module.exports = function analyseBundle(filepath, config) {
 
     //【2】导出
     let exportStatement = null;
-    while (exportStatement = /(?:^|\n)export.+\n/.exec(source)) {
-        exportStatement = exportStatement[0].replace(/\n$/, '').replace(/^\n/, '');
+    while (exportStatement = /(?:^|\n) *export[^\n]+\n/.exec(source)) {
+        exportStatement = exportStatement[0].replace(/\n$/, '').replace(/^\n/, '').trim();
 
         // 获取导出语句的信息
         let exportResult = analyseExport(exportStatement);
@@ -66,7 +67,7 @@ module.exports = function analyseBundle(filepath, config) {
     return `${bundleCode}
 /*************************** [bundle] ****************************/
 window.__nefbl_pack__bundleSrc__['${filepath}']=function(){
-    let __nefbl_pack__scope_bundle__={};
+    var __nefbl_pack__scope_bundle__={};
     ${source}
     return __nefbl_pack__scope_bundle__;
 }`;

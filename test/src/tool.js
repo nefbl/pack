@@ -12,4 +12,4 @@ export let info1 = '信息哦';
 
 // import { ref } from 'nefbl';
 
-// console.log(ref);
+// console.log(1);

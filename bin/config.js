@@ -79,6 +79,10 @@ module.exports = function (_process) {
             if (/node_modules/.test(this.filepath) && !/sprout-ui/.test(this.filepath)) return source;
 
             return babel.transformFileSync(this.filepath, {
+
+                // 去掉注释
+                "comments": false,
+
                 "presets": [["@babel/preset-env", {
 
                     // 我不希望import这样的语句被转义
