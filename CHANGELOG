@@ -20,3 +20,7 @@ v0.2.0:
     date:2021-12-09
     changes:
       -  新增重定向配置redirect
+v0.2.1:
+    date:2021-12-10
+    changes:
+      -  新增build模式（和dev在配置上统一）

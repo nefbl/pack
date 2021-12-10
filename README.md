@@ -24,6 +24,8 @@
 
 ## How to debug?
 
+命令行进入```test```文件夹，然后执行：
+
 ```
 npm run debug
 ```

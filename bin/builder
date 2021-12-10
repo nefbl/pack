@@ -7,6 +7,7 @@ process.title = 'nefbl-builder';
 const nodejs = require('@hai2007/nodejs');
 const analyseBundle = require('./build/analyseBundle');
 const fs = require('fs');
+const urlToIndex = require('./build/urlToIndex');
 
 // 首先，获取配置文件
 let config = require('./config')(process);
@@ -50,7 +51,7 @@ while (needAnalyseFiles.length > 0) {
     if (needAnalyseFile.isRoot) {
 
         // 整个程序由主bundle启动
-        bundleCode += `\nwindow.__nefbl_pack__bundleSrc__['${needAnalyseFile.source}']();`;
+        bundleCode += `\nwindow.__nefbl_pack__bundleSrc__['${urlToIndex(needAnalyseFile.source)}']();`;
     }
 
     fs.writeFileSync(needAnalyseFile.target, bundleCode);

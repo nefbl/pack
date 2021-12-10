@@ -2,7 +2,7 @@ const nodejs = require('@hai2007/nodejs');
 const getFilePath = require('../tool/getFilePath');
 const getMainUrl = require('../tool/getMainUrl');
 
-module.exports = function (statement, filecontext, context) {
+module.exports = function (statement, filecontext, config) {
     let statementArray = statement.replace(/^import +/, '').split('from');
     let url = statementArray.pop();
     let args = [], def = '';
@@ -24,12 +24,19 @@ module.exports = function (statement, filecontext, context) {
     // 去掉字符串两边的空白和多余符号
     url = url.trim().replace(/['"]/g, '');
 
+    // 如果是需要重定向的
+    if (url in config.redirect) {
+        url = nodejs.fullPath(config.redirect[url], process.cwd());
+    }
+
     // 路径变成全路径
-    if (/^[.|\/]/.test(url)) {
-        url = getFilePath(nodejs.fullPath(url, filecontext));
-    } else {
-        url = nodejs.fullPath("node_modules/" + url, context);
-        url = getFilePath(url) || getMainUrl(url);
+    else {
+        if (/^[.|\/]/.test(url)) {
+            url = getFilePath(nodejs.fullPath(url, filecontext));
+        } else {
+            url = nodejs.fullPath("node_modules/" + url, config.context);
+            url = getFilePath(url) || getMainUrl(url);
+        }
     }
 
     return { url, args, def };

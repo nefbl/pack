@@ -1,35 +1,22 @@
+const pkg = JSON.parse(require('fs').readFileSync('./package.json'));
+
 module.exports = {
 
     // 打包入口
-    entry: './src/index.js',
+    entry: './src/main.ts',
 
     // 打包出口
-    output: 'build/main.js',
+    output: 'build/main@v' + pkg.version + '.js',
 
     // 对导入路径重定向
     redirect: {
         'nefbl': "./src/lib/nefbl.js"
     },
 
-    // 配置对于特殊的文件如何解析
-    loader: [
-        {
-            test: /\.css$/,
-            handler: [function (source) {
-                return "var styleElement = document.createElement('style');\n" +
-                    "var head = document.head || document.getElementsByTagName('head')[0];\n" +
-                    "styleElement.innerHTML = '" + source.replace(/\n/g, '\\n') + "';\n" +
-                    "styleElement.setAttribute('type', 'text/css');" +
-                    "head.appendChild(styleElement);";
-            }]
-        }, {
-            test: /\.json$/,
-            handler: [function (source) {
-                return " export default " + source;
-            }]
-        }, {
-            test: /\.clunch$/,
-            handler: ['clunch/loader.js']
-        }
-    ]
+    // loader: [{
+    //     test: /\.(js|ts)$/,
+    //     handler: [function (source) {
+    //         return source;
+    //     }]
+    // }]
 };

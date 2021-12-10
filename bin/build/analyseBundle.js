@@ -4,6 +4,7 @@ const readFileSync = require('../tool/readFileSync');
 const nodejs = require('@hai2007/nodejs');
 const toInnerImport = require('./toInnerImport');
 const useLoader = require('../tool/useLoader');
+const urlToIndex = require('./urlToIndex');
 
 module.exports = function analyseBundle(filepath, config) {
 
@@ -36,6 +37,9 @@ module.exports = function analyseBundle(filepath, config) {
     // 读取具体代码
     let source = (useLoader(filepath, config) || readFileSync(filepath)) + "\n  ";
 
+    //【警告】
+    // 对class转义后的代码进行特殊兼容
+    source = source.replace(/export { _class as default };/, '__nefbl_pack__scope_bundle__.__default__=_class;');
 
     //【1】导入
     let importStatement = null;
@@ -43,7 +47,7 @@ module.exports = function analyseBundle(filepath, config) {
         importStatement = importStatement[0].replace(/^\n/, '').trim();
 
         // 获取导入语句的信息
-        let importResult = analyseImport(importStatement.replace(/;$/, ''), filecontext, config.context);
+        let importResult = analyseImport(importStatement.replace(/;$/, ''), filecontext, config);
 
         // 解析依赖的bundle
         bundleCode += analyseBundle(importResult.url, config);
@@ -54,7 +58,7 @@ module.exports = function analyseBundle(filepath, config) {
 
     //【2】导出
     let exportStatement = null;
-    while (exportStatement = /(?:^|\n) *export[^\n]+\n/.exec(source)) {
+    while (exportStatement = /(?:^|\n) *export [^\n]+\n/.exec(source)) {
         exportStatement = exportStatement[0].replace(/\n$/, '').replace(/^\n/, '').trim();
 
         // 获取导出语句的信息
@@ -66,8 +70,11 @@ module.exports = function analyseBundle(filepath, config) {
 
     return `${bundleCode}
 /*************************** [bundle] ****************************/
-window.__nefbl_pack__bundleSrc__['${filepath}']=function(){
+// ${filepath}
+/*****************************************************************/
+window.__nefbl_pack__bundleSrc__['${urlToIndex(filepath)}']=function(){
     var __nefbl_pack__scope_bundle__={};
+    var __nefbl_pack__scope_args__;
     ${source}
     return __nefbl_pack__scope_bundle__;
 }`;

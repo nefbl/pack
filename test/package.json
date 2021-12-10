@@ -1,23 +1,16 @@
 {
   "name": "test",
   "version": "0.1.0",
+  "description": "test",
   "scripts": {
     "build": "node ../bin/builder --config pack.prod.js",
     "dev": "node ../bin/server --config pack.dev.js",
-    "npm-build": "pack_pkg --config pack.prod.js",
-    "npm-dev": "pack_dev --config pack.dev.js",
     "debug": "echo 'chrome://inspect/#devices' && node --inspect-brk ../bin/builder --config pack.prod.js"
   },
   "dependencies": {
-    "@hai2007/polyfill": "^0.1.1",
+    "@hai2007/polyfill": "^0.2.0",
     "@hai2007/style": "^0.3.0",
-    "@hai2007/tool": "^1.0.0",
-    "clunch": "^2.3.4",
     "nefbl": "^0.2.6",
-    "sprout-ui": "^0.1.0"
-  },
-  "devDependencies": {
-    "@hai2007/algorithm": "^0.7.3",
-    "@nefbl/pack": "0.1.0-alpha.5"
+    "sprout-ui": "^0.2.0"
   }
 }
