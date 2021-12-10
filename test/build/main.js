@@ -26,11 +26,11 @@
 /*************************** [bundle] ****************************/
 window.__nefbl_pack__bundleSrc__['/Users/kapok/hai2007/nefbl/pack/test/src/index.js']=function(){
     let __nefbl_pack__scope_bundle__={};
-    window.__nefbl_pack__getBundle('/Users/kapok/hai2007/nefbl/pack/test/node_modules/@hai2007/style/normalize.css');
+    // import '@hai2007/style/normalize.css'
 
-window.__nefbl_pack__getBundle('/Users/kapok/hai2007/nefbl/pack/test/node_modules/@hai2007/polyfill/Promise.js');
+// import '@hai2007/polyfill/Promise.js'
 
-let {__default__:Clunch } = window.__nefbl_pack__getBundle('/Users/kapok/hai2007/nefbl/pack/test/node_modules/clunch/src/core/index.js');
+// import Clunch from 'clunch/src/core/index';
 
 let {doit1,info1} = window.__nefbl_pack__getBundle('/Users/kapok/hai2007/nefbl/pack/test/src/tool.js');
 
@@ -42,12 +42,12 @@ let {__default__:doit } = window.__nefbl_pack__getBundle('/Users/kapok/hai2007/n
 
 doit()
 
-let {__default__:info } = window.__nefbl_pack__getBundle('/Users/kapok/hai2007/nefbl/pack/test/src/data/info.json');
-console.log(info);
+// import info from './data/info'
+// console.log(info);
 
-let {__default__:image } = window.__nefbl_pack__getBundle('/Users/kapok/hai2007/nefbl/pack/test/src/image.clunch');
+// import image from './image.clunch';
 
-console.log(image);
+// console.log(image);
 
 __nefbl_pack__scope_bundle__.__default__= '你好呀';
 __nefbl_pack__scope_bundle__.key = '1';

@@ -11,7 +11,6 @@ module.exports = function analyseExport(statement) {
 
     // export function XXX() => __nefbl_pack__scope_bundle__.XXX=function()
     else if (/^function/.test(statement)) {
-        console.log("[function]" + statement);
         statement = "__nefbl_pack__scope_bundle__." + (statement.replace(/^function +([^ (]+)\(/, '$1=function('));
     }
 

@@ -15,8 +15,8 @@ module.exports = function analyseBundle(filepath, context) {
 
     //【1】导入
     let importStatement = null;
-    while (importStatement = /import[^'"]*(['|"]).+\1;*/.exec(source)) {
-        importStatement = importStatement[0];
+    while (importStatement = /(?:^|\n)import[^'"]*(['|"]).+\1;*/.exec(source)) {
+        importStatement = importStatement[0].replace(/^\n/, '');
 
         // 获取导入语句的信息
         let importResult = analyseImport(importStatement.replace(/;$/, ''), filecontext, context);
@@ -27,8 +27,8 @@ module.exports = function analyseBundle(filepath, context) {
 
     //【2】导出
     let exportStatement = null;
-    while (exportStatement = /export.+\n/.exec(source)) {
-        exportStatement = exportStatement[0].replace(/\n/, '');
+    while (exportStatement = /(?:^|\n)export.+\n/.exec(source)) {
+        exportStatement = exportStatement[0].replace(/\n$/, '').replace(/^\n/, '');
 
         // 获取导出语句的信息
         let exportResult = analyseExport(exportStatement);

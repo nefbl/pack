@@ -1,8 +1,8 @@
-import '@hai2007/style/normalize.css'
+// import '@hai2007/style/normalize.css'
 
-import '@hai2007/polyfill/Promise.js'
+// import '@hai2007/polyfill/Promise.js'
 
-import Clunch from 'clunch/src/core/index';
+// import Clunch from 'clunch/src/core/index';
 
 import { doit1, info1 } from './tool'
 
@@ -14,12 +14,12 @@ import doit from './tool'
 
 doit()
 
-import info from './data/info'
-console.log(info);
+// import info from './data/info'
+// console.log(info);
 
-import image from './image.clunch';
+// import image from './image.clunch';
 
-console.log(image);
+// console.log(image);
 
 export default '你好呀';
 export let key = '1';
