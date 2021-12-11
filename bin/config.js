@@ -39,6 +39,20 @@ module.exports = function (_process) {
         }
         config.redirect = redirect;
 
+    } else if (config.mode == 'production') {
+
+        // 默认打包启动压缩
+        config.min = 'min' in config ? config.min : true;
+
+    } else {
+        nodejs.log(`config.mode is a required item, indicating the current packaging mode. It should be a string, and only two values can be selected:
+
+* development: Corresponding command 'pack_dev'
+* production: Corresponding command 'pack_build'
+`);
+
+        nodejs.error('Package failed!\n');
+        process.exit();
     }
 
     config.loader = config.loader || [];

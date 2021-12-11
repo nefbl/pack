@@ -8,6 +8,7 @@ const nodejs = require('@hai2007/nodejs');
 const analyseBundle = require('./build/analyseBundle');
 const fs = require('fs');
 const urlToIndex = require('./build/urlToIndex');
+const { minify } = require("terser");
 
 // 首先，获取配置文件
 let config = require('./config')(process);
@@ -64,7 +65,16 @@ while (needAnalyseFiles.length > 0) {
         bundleCode += `\nwindow.__nefbl_pack__bundleSrc__['${urlToIndex(needAnalyseFile.source)}']();`;
     }
 
-    fs.writeFileSync(needAnalyseFile.target, bundleCode);
+    if (config.min) {
+        minify(bundleCode, {
+            toplevel: true
+        }).then(data => {
+            fs.writeFileSync(needAnalyseFile.target, data.code);
+        });
+    } else {
+        fs.writeFileSync(needAnalyseFile.target, bundleCode);
+    }
+
 }
 
 nodejs.error(`

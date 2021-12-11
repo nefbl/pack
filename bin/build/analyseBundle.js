@@ -36,7 +36,7 @@ module.exports = function analyseBundle(filepath, config) {
         }
     }
 
-    nodejs.print("    * " + filepath);
+    nodejs.print("    * [" + urlToIndex(filepath) + "] " + filepath);
 
     // 获取当前路径上下文
     let filecontext = nodejs.fullPath('../', filepath);

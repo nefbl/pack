@@ -1,6 +1,6 @@
 {
   "name": "@nefbl/pack",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "nefbl打包工具",
   "main": "index.js",
   "bin": {
@@ -32,6 +32,7 @@
     "@hai2007/algorithm": "^0.7.2",
     "@hai2007/nodejs": "^2.1.0",
     "@hai2007/tool": "^0.9.3",
+    "terser": "^5.10.0",
     "tslib": "^2.3.1"
   }
 }

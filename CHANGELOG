@@ -28,3 +28,7 @@ v0.3.0:
     date:2021-12-11
     changes:
       -  新增懒加载 ```()=>import(url)```
+v0.4.0:
+    date:2021-12-11
+    changes:
+      -  build模式新增压缩配置min，默认压缩

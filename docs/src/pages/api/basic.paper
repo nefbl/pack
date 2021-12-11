@@ -100,7 +100,7 @@ task:{
         devServer
     </h4>
     <p>
-        对于开发环境是必输，表示用于辅助开发的本地服务器。
+        对于开发模式是必输，表示用于辅助开发的本地服务器。
     </p>
     <pre q-code>
 devServer: {
@@ -108,6 +108,12 @@ devServer: {
     port: 20000
 }
     </pre>
+    <h4 id='fixed-config-items-min'>
+        min
+    </h4>
+    <p>
+        可选，只在打包模式有效，布尔值类型，默认true，表示打包后进行代码压缩。
+    </p>
     <h2 id='fixed-terminal'>
         命令
     </h2>
