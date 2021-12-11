@@ -58,7 +58,7 @@
 /******/
 
 /*************************** [bundle] ****************************/
-// 原始文件：./src/main.ts
+// Original file:./src/main.ts
 /*****************************************************************/
 window.__nefbl_pack__bundleSrc__['28']=function(){
     var __nefbl_pack__scope_bundle__={};
@@ -83,7 +83,7 @@ platform({
 }
 
 /*************************** [bundle] ****************************/
-// 原始文件：./src/lib/nefbl.js
+// Original file:./src/lib/nefbl.js
 /*****************************************************************/
 window.__nefbl_pack__bundleSrc__['1']=function(){
     var __nefbl_pack__scope_bundle__={};
@@ -105,7 +105,7 @@ __nefbl_pack__scope_bundle__.reactive = Nefbl.reactive;
 }
 
 /*************************** [bundle] ****************************/
-// 原始文件：./node_modules/nefbl/dist/nefbl.js
+// Original file:./node_modules/nefbl/dist/nefbl.js
 /*****************************************************************/
 window.__nefbl_pack__bundleSrc__['0']=function(){
     var __nefbl_pack__scope_bundle__={};
@@ -1887,7 +1887,7 @@ window.__nefbl_pack__bundleSrc__['0']=function(){
 }
 
 /*************************** [bundle] ****************************/
-// 原始文件：./node_modules/@hai2007/style/normalize.css
+// Original file:./node_modules/@hai2007/style/normalize.css
 /*****************************************************************/
 window.__nefbl_pack__bundleSrc__['2']=function(){
     var __nefbl_pack__scope_bundle__={};
@@ -1898,7 +1898,7 @@ window.__nefbl_pack__bundleSrc__['2']=function(){
 }
 
 /*************************** [bundle] ****************************/
-// 原始文件：./node_modules/@hai2007/polyfill/Promise.js
+// Original file:./node_modules/@hai2007/polyfill/Promise.js
 /*****************************************************************/
 window.__nefbl_pack__bundleSrc__['15']=function(){
     var __nefbl_pack__scope_bundle__={};
@@ -2238,7 +2238,7 @@ if (!('Promise' in globalNAMESPACE)) {
 }
 
 /*************************** [bundle] ****************************/
-// 原始文件：./node_modules/@hai2007/polyfill/.inner/globalNAMESPACE.js
+// Original file:./node_modules/@hai2007/polyfill/.inner/globalNAMESPACE.js
 /*****************************************************************/
 window.__nefbl_pack__bundleSrc__['3']=function(){
     var __nefbl_pack__scope_bundle__={};
@@ -2263,7 +2263,7 @@ __nefbl_pack__scope_bundle__.default= globalNAMESPACE;
 }
 
 /*************************** [bundle] ****************************/
-// 原始文件：./node_modules/@hai2007/tool/type.js
+// Original file:./node_modules/@hai2007/tool/type.js
 /*****************************************************************/
 window.__nefbl_pack__bundleSrc__['13']=function(){
     var __nefbl_pack__scope_bundle__={};
@@ -2339,7 +2339,7 @@ __nefbl_pack__scope_bundle__.isComment = function (input) { return domTypeHelp([
 }
 
 /*************************** [bundle] ****************************/
-// 原始文件：./node_modules/@hai2007/tool/.inner/type/isObject.js
+// Original file:./node_modules/@hai2007/tool/.inner/type/isObject.js
 /*****************************************************************/
 window.__nefbl_pack__bundleSrc__['4']=function(){
     var __nefbl_pack__scope_bundle__={};
@@ -2360,7 +2360,7 @@ __nefbl_pack__scope_bundle__.default= function (value) {
 }
 
 /*************************** [bundle] ****************************/
-// 原始文件：./node_modules/@hai2007/tool/.inner/type/isBoolean.js
+// Original file:./node_modules/@hai2007/tool/.inner/type/isBoolean.js
 /*****************************************************************/
 window.__nefbl_pack__bundleSrc__['6']=function(){
     var __nefbl_pack__scope_bundle__={};
@@ -2385,7 +2385,7 @@ __nefbl_pack__scope_bundle__.default= function (value) {
 }
 
 /*************************** [bundle] ****************************/
-// 原始文件：./node_modules/@hai2007/tool/.inner/type/getType.js
+// Original file:./node_modules/@hai2007/tool/.inner/type/getType.js
 /*****************************************************************/
 window.__nefbl_pack__bundleSrc__['5']=function(){
     var __nefbl_pack__scope_bundle__={};
@@ -2410,7 +2410,7 @@ __nefbl_pack__scope_bundle__.default= function (value) {
 }
 
 /*************************** [bundle] ****************************/
-// 原始文件：./node_modules/@hai2007/tool/.inner/type/isNumber.js
+// Original file:./node_modules/@hai2007/tool/.inner/type/isNumber.js
 /*****************************************************************/
 window.__nefbl_pack__bundleSrc__['7']=function(){
     var __nefbl_pack__scope_bundle__={};
@@ -2437,7 +2437,7 @@ __nefbl_pack__scope_bundle__.default= function (value) {
 }
 
 /*************************** [bundle] ****************************/
-// 原始文件：./node_modules/@hai2007/tool/.inner/type/isString.js
+// Original file:./node_modules/@hai2007/tool/.inner/type/isString.js
 /*****************************************************************/
 window.__nefbl_pack__bundleSrc__['8']=function(){
     var __nefbl_pack__scope_bundle__={};
@@ -2462,7 +2462,7 @@ __nefbl_pack__scope_bundle__.default= function (value) {
 }
 
 /*************************** [bundle] ****************************/
-// 原始文件：./node_modules/@hai2007/tool/.inner/type/isSymbol.js
+// Original file:./node_modules/@hai2007/tool/.inner/type/isSymbol.js
 /*****************************************************************/
 window.__nefbl_pack__bundleSrc__['9']=function(){
     var __nefbl_pack__scope_bundle__={};
@@ -2487,7 +2487,7 @@ __nefbl_pack__scope_bundle__.default= function (value) {
 }
 
 /*************************** [bundle] ****************************/
-// 原始文件：./node_modules/@hai2007/tool/.inner/type/isFunction.js
+// Original file:./node_modules/@hai2007/tool/.inner/type/isFunction.js
 /*****************************************************************/
 window.__nefbl_pack__bundleSrc__['10']=function(){
     var __nefbl_pack__scope_bundle__={};
@@ -2520,7 +2520,7 @@ __nefbl_pack__scope_bundle__.default= function (value) {
 }
 
 /*************************** [bundle] ****************************/
-// 原始文件：./node_modules/@hai2007/tool/.inner/type/isError.js
+// Original file:./node_modules/@hai2007/tool/.inner/type/isError.js
 /*****************************************************************/
 window.__nefbl_pack__bundleSrc__['12']=function(){
     var __nefbl_pack__scope_bundle__={};
@@ -2554,7 +2554,7 @@ __nefbl_pack__scope_bundle__.default= function (value) {
 }
 
 /*************************** [bundle] ****************************/
-// 原始文件：./node_modules/@hai2007/tool/.inner/type/isPlainObject.js
+// Original file:./node_modules/@hai2007/tool/.inner/type/isPlainObject.js
 /*****************************************************************/
 window.__nefbl_pack__bundleSrc__['11']=function(){
     var __nefbl_pack__scope_bundle__={};
@@ -2593,7 +2593,7 @@ __nefbl_pack__scope_bundle__.default= function (value) {
 }
 
 /*************************** [bundle] ****************************/
-// 原始文件：./node_modules/@hai2007/polyfill/.inner/Promise/doResolve.js
+// Original file:./node_modules/@hai2007/polyfill/.inner/Promise/doResolve.js
 /*****************************************************************/
 window.__nefbl_pack__bundleSrc__['14']=function(){
     var __nefbl_pack__scope_bundle__={};
@@ -2711,7 +2711,7 @@ __nefbl_pack__scope_bundle__.doResolve = function (doback, that) {
 }
 
 /*************************** [bundle] ****************************/
-// 原始文件：./src/app.module.ts
+// Original file:./src/app.module.ts
 /*****************************************************************/
 window.__nefbl_pack__bundleSrc__['27']=function(){
     var __nefbl_pack__scope_bundle__={};
@@ -2754,7 +2754,7 @@ __nefbl_pack__scope_bundle__.default=_class;
 }
 
 /*************************** [bundle] ****************************/
-// 原始文件：./src/App/index.ts
+// Original file:./src/App/index.ts
 /*****************************************************************/
 window.__nefbl_pack__bundleSrc__['21']=function(){
     var __nefbl_pack__scope_bundle__={};
@@ -2809,8 +2809,6 @@ var _class = (_dec = Component({
 
       var page = pages["page" + event.target.getAttribute('tag')];
       page().then(function (data) {
-        console.log(data["default"]);
-        console.log(_this);
         _this.page = data["default"];
       });
     }
@@ -2825,7 +2823,7 @@ __nefbl_pack__scope_bundle__.default=_class;
 }
 
 /*************************** [bundle] ****************************/
-// 原始文件：./src/App/index.scss
+// Original file:./src/App/index.scss
 /*****************************************************************/
 window.__nefbl_pack__bundleSrc__['16']=function(){
     var __nefbl_pack__scope_bundle__={};
@@ -2836,7 +2834,7 @@ window.__nefbl_pack__bundleSrc__['16']=function(){
 }
 
 /*************************** [bundle] ****************************/
-// 原始文件：./src/App/index.html
+// Original file:./src/App/index.html
 /*****************************************************************/
 window.__nefbl_pack__bundleSrc__['17']=function(){
     var __nefbl_pack__scope_bundle__={};
@@ -2847,7 +2845,7 @@ window.__nefbl_pack__bundleSrc__['17']=function(){
 }
 
 /*************************** [bundle] ****************************/
-// 原始文件：./src/App/lazy-load.js
+// Original file:./src/App/lazy-load.js
 /*****************************************************************/
 window.__nefbl_pack__bundleSrc__['20']=function(){
     var __nefbl_pack__scope_bundle__={};
@@ -2865,7 +2863,7 @@ window.__nefbl_pack__bundleSrc__['20']=function(){
 }
 
 /*************************** [bundle] ****************************/
-// 原始文件：./node_modules/sprout-ui/nefbl/directive/ui-bind.ts
+// Original file:./node_modules/sprout-ui/nefbl/directive/ui-bind.ts
 /*****************************************************************/
 window.__nefbl_pack__bundleSrc__['22']=function(){
     var __nefbl_pack__scope_bundle__={};
@@ -2925,7 +2923,7 @@ __nefbl_pack__scope_bundle__.default=_class;
 }
 
 /*************************** [bundle] ****************************/
-// 原始文件：./node_modules/sprout-ui/nefbl/directive/ui-model.ts
+// Original file:./node_modules/sprout-ui/nefbl/directive/ui-model.ts
 /*****************************************************************/
 window.__nefbl_pack__bundleSrc__['24']=function(){
     var __nefbl_pack__scope_bundle__={};
@@ -2977,7 +2975,7 @@ __nefbl_pack__scope_bundle__.default=_class;
 }
 
 /*************************** [bundle] ****************************/
-// 原始文件：./node_modules/@hai2007/tool/xhtml.js
+// Original file:./node_modules/@hai2007/tool/xhtml.js
 /*****************************************************************/
 window.__nefbl_pack__bundleSrc__['23']=function(){
     var __nefbl_pack__scope_bundle__={};
@@ -3292,7 +3290,7 @@ __nefbl_pack__scope_bundle__.default= {
 }
 
 /*************************** [bundle] ****************************/
-// 原始文件：./node_modules/sprout-ui/nefbl/directive/ui-on.ts
+// Original file:./node_modules/sprout-ui/nefbl/directive/ui-on.ts
 /*****************************************************************/
 window.__nefbl_pack__bundleSrc__['25']=function(){
     var __nefbl_pack__scope_bundle__={};
@@ -3355,7 +3353,7 @@ __nefbl_pack__scope_bundle__.default=_class;
 }
 
 /*************************** [bundle] ****************************/
-// 原始文件：./node_modules/sprout-ui/nefbl/directive/ui-lazy.ts
+// Original file:./node_modules/sprout-ui/nefbl/directive/ui-lazy.ts
 /*****************************************************************/
 window.__nefbl_pack__bundleSrc__['26']=function(){
     var __nefbl_pack__scope_bundle__={};

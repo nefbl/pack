@@ -36,7 +36,7 @@ module.exports = function analyseBundle(filepath, config) {
         }
     }
 
-    nodejs.log("    ➟ " + filepath);
+    nodejs.print("    * " + filepath);
 
     // 获取当前路径上下文
     let filecontext = nodejs.fullPath('../', filepath);
@@ -107,7 +107,7 @@ module.exports = function analyseBundle(filepath, config) {
     return {
         code: `
 /*************************** [bundle] ****************************/
-// 原始文件：${filepath.replace(config.context, '.').replace(/\\/g, '/')}
+// Original file:${filepath.replace(config.context, '.').replace(/\\/g, '/')}
 /*****************************************************************/
 window.__nefbl_pack__bundleSrc__['${urlToIndex(filepath)}']=function(){
     var __nefbl_pack__scope_bundle__={};

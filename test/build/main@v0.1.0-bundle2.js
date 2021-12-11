@@ -1,6 +1,6 @@
 
 /*************************** [bundle] ****************************/
-// 原始文件：./src/App/page2/index.ts
+// Original file:./src/App/page2/index.ts
 /*****************************************************************/
 window.__nefbl_pack__bundleSrc__['19']=function(){
     var __nefbl_pack__scope_bundle__={};
@@ -30,7 +30,7 @@ __nefbl_pack__scope_bundle__.default=_class;
 }
 
 /*************************** [bundle] ****************************/
-// 原始文件：./src/App/page2/index.html
+// Original file:./src/App/page2/index.html
 /*****************************************************************/
 window.__nefbl_pack__bundleSrc__['30']=function(){
     var __nefbl_pack__scope_bundle__={};

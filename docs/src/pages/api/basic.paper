@@ -87,11 +87,15 @@ task:{
     </h4>
     <p>
         必输，当前环境，应该是一个字符串，只有两个值可选：
-        <span class="important">development</span>
-        和
-        <span class="important">production</span>
-        。
     </p>
+    <ul>
+        <li>
+            【1】<span class="important">development</span>：开发模式，配合命令'pack_dev'使用。
+        </li>
+        <li>
+            【2】<span class="important">production</span>：打包模式，配合命令'pack_build'使用。
+        </li>
+    </ul>
     <h4 id='fixed-config-items-devServer'>
         devServer
     </h4>

@@ -28,6 +28,11 @@ global.__nefbl_pack__rootBundle__ = [];
 // 记录已经生称的lazy包
 global.__nefbl_pack__lazyBundle__ = [];
 
+nodejs.error(`Crafted in China By hai2007, powered by @nefbl/pack.
+-------------------------------------------------------------------------
+( https://nefbl.github.io/pack/ )
+`)
+
 while (needAnalyseFiles.length > 0) {
     let needAnalyseFile = needAnalyseFiles.shift();
 
@@ -44,7 +49,7 @@ while (needAnalyseFiles.length > 0) {
         bundleCode = "/******/\n" + bundleCode.replace(/^/mg, '/******/  ') + "\n/************************************************************************/\n/******/\n";
     }
 
-    nodejs.log(`\n当前分析的独立bundle文件:
+    nodejs.log(`\nIndependent bundle file currently analyzed:
     ● ${needAnalyseFile.source} → ${needAnalyseFile.target}
 `);
 
@@ -62,4 +67,6 @@ while (needAnalyseFiles.length > 0) {
     fs.writeFileSync(needAnalyseFile.target, bundleCode);
 }
 
-nodejs.log('\n打包完成\n');
+nodejs.error(`
+Package succeeded!
+`);
