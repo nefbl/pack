@@ -25,6 +25,9 @@ let needAnalyseFiles = [{
 // 记录根bundle已经解析的依赖文件
 global.__nefbl_pack__rootBundle__ = [];
 
+// 记录已经生称的lazy包
+global.__nefbl_pack__lazyBundle__ = [];
+
 while (needAnalyseFiles.length > 0) {
     let needAnalyseFile = needAnalyseFiles.shift();
 
@@ -41,12 +44,14 @@ while (needAnalyseFiles.length > 0) {
         bundleCode = "/******/\n" + bundleCode.replace(/^/mg, '/******/  ') + "\n/************************************************************************/\n/******/\n";
     }
 
-    nodejs.log(`当前分析的独立bundle文件:
+    nodejs.log(`\n当前分析的独立bundle文件:
     ● ${needAnalyseFile.source} → ${needAnalyseFile.target}
 `);
 
     // 分析出当前bundle文件
-    bundleCode += analyseBundle(needAnalyseFile.source, config);
+    let bundle = analyseBundle(needAnalyseFile.source, config);
+    bundleCode += bundle.code;
+    for (let lazyBundleFile of bundle.lazy) { needAnalyseFiles.push(lazyBundleFile); }
 
     if (needAnalyseFile.isRoot) {
 

@@ -18,3 +18,8 @@ window.__nefbl_pack__getBundle = function (bundleName) {
     // 返回需要的bundle的结果
     return window.__nefbl_pack__bundleObj__[bundleName];
 }
+
+// 获取懒加载bundle结果
+window.__nefbl_pack__getLazyBundle = function (fileName, bundleName) {
+
+}

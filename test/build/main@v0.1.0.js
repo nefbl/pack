@@ -1,30 +1,82 @@
 /******/
-/******/  // @nefbl/pack Bootstrap/******/  
-/******/  // （ https://nefbl.github.io/pack/ ）/******/  
-/******/  /******/  
-/******/  // 记录bundle的函数源码/******/  
-/******/  window.__nefbl_pack__bundleSrc__ = {};/******/  
-/******/  /******/  
-/******/  // 记录bundle的运行结果/******/  
-/******/  window.__nefbl_pack__bundleObj__ = {};/******/  
-/******/  /******/  
-/******/  // 获取bundle结果/******/  
-/******/  window.__nefbl_pack__getBundle = function (bundleName) {/******/  
-/******/  /******/  
-/******/      // 一个bundle只有第一次导入的时候需要执行/******/  
-/******/      if (!(bundleName in window.__nefbl_pack__bundleObj__)) {/******/  
-/******/          window.__nefbl_pack__bundleObj__[bundleName] = window.__nefbl_pack__bundleSrc__[bundleName]();/******/  
-/******/      }/******/  
-/******/  /******/  
-/******/      // 返回需要的bundle的结果/******/  
-/******/      return window.__nefbl_pack__bundleObj__[bundleName];/******/  
-/******/  }/******/  
+/******/  // @nefbl/pack Bootstrap
+/******/  // （ https://nefbl.github.io/pack/ ）
+/******/  
+/******/  // 记录bundle的函数源码
+/******/  window.__nefbl_pack__bundleSrc__ = {};
+/******/  
+/******/  // 记录bundle的运行结果
+/******/  window.__nefbl_pack__bundleObj__ = {};
+/******/  
+/******/  // 获取bundle结果
+/******/  window.__nefbl_pack__getBundle = function (bundleName) {
+/******/  
+/******/      // 一个bundle只有第一次导入的时候需要执行
+/******/      if (!(bundleName in window.__nefbl_pack__bundleObj__)) {
+/******/          window.__nefbl_pack__bundleObj__[bundleName] = window.__nefbl_pack__bundleSrc__[bundleName]();
+/******/      }
+/******/  
+/******/      // 返回需要的bundle的结果
+/******/      return window.__nefbl_pack__bundleObj__[bundleName];
+/******/  }
+/******/  
+/******/  // 获取懒加载bundle结果
+/******/  window.__nefbl_pack__getLazyBundle = function (fileName, bundleName) {
+/******/  
+/******/  }
 /******/  
 /************************************************************************/
 /******/
 
 /*************************** [bundle] ****************************/
-// D:\hai2007\nefbl\pack\test\node_modules\nefbl\dist\nefbl.js
+// 原始文件：./src/main.ts
+/*****************************************************************/
+window.__nefbl_pack__bundleSrc__['28']=function(){
+    var __nefbl_pack__scope_bundle__={};
+    var __nefbl_pack__scope_args__;
+    __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('1');
+var platform=__nefbl_pack__scope_args__.platform;
+
+__nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('2');
+var normalize =__nefbl_pack__scope_args__.default;
+
+__nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('15');
+
+__nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('27');
+var appModule =__nefbl_pack__scope_args__.default;
+
+platform({
+  el: document.getElementById('root'),
+  styles: [normalize]
+}).bootstrap(appModule);
+  
+    return __nefbl_pack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// 原始文件：./src/lib/nefbl.js
+/*****************************************************************/
+window.__nefbl_pack__bundleSrc__['1']=function(){
+    var __nefbl_pack__scope_bundle__={};
+    var __nefbl_pack__scope_args__;
+    __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('0');
+
+__nefbl_pack__scope_bundle__.Module = Nefbl.Module;
+__nefbl_pack__scope_bundle__.Component = Nefbl.Component;
+__nefbl_pack__scope_bundle__.Directive = Nefbl.Directive;
+__nefbl_pack__scope_bundle__.platform = Nefbl.platform;
+__nefbl_pack__scope_bundle__.mountComponent = Nefbl.mountComponent;
+__nefbl_pack__scope_bundle__.evalExpress = Nefbl.evalExpress;
+__nefbl_pack__scope_bundle__.getValue = Nefbl.getValue;
+__nefbl_pack__scope_bundle__.setValue = Nefbl.setValue;
+__nefbl_pack__scope_bundle__.ref = Nefbl.ref;
+__nefbl_pack__scope_bundle__.reactive = Nefbl.reactive;
+  
+    return __nefbl_pack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// 原始文件：./node_modules/nefbl/dist/nefbl.js
 /*****************************************************************/
 window.__nefbl_pack__bundleSrc__['0']=function(){
     var __nefbl_pack__scope_bundle__={};
@@ -1804,29 +1856,9 @@ window.__nefbl_pack__bundleSrc__['0']=function(){
   
     return __nefbl_pack__scope_bundle__;
 }
-/*************************** [bundle] ****************************/
-// D:\hai2007\nefbl\pack\test\src\lib\nefbl.js
-/*****************************************************************/
-window.__nefbl_pack__bundleSrc__['1']=function(){
-    var __nefbl_pack__scope_bundle__={};
-    var __nefbl_pack__scope_args__;
-    __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('0');
 
-__nefbl_pack__scope_bundle__.Module = Nefbl.Module;
-__nefbl_pack__scope_bundle__.Component = Nefbl.Component;
-__nefbl_pack__scope_bundle__.Directive = Nefbl.Directive;
-__nefbl_pack__scope_bundle__.platform = Nefbl.platform;
-__nefbl_pack__scope_bundle__.mountComponent = Nefbl.mountComponent;
-__nefbl_pack__scope_bundle__.evalExpress = Nefbl.evalExpress;
-__nefbl_pack__scope_bundle__.getValue = Nefbl.getValue;
-__nefbl_pack__scope_bundle__.setValue = Nefbl.setValue;
-__nefbl_pack__scope_bundle__.ref = Nefbl.ref;
-__nefbl_pack__scope_bundle__.reactive = Nefbl.reactive;
-  
-    return __nefbl_pack__scope_bundle__;
-}
 /*************************** [bundle] ****************************/
-// D:\hai2007\nefbl\pack\test\node_modules\@hai2007\style\normalize.css
+// 原始文件：./node_modules/@hai2007/style/normalize.css
 /*****************************************************************/
 window.__nefbl_pack__bundleSrc__['2']=function(){
     var __nefbl_pack__scope_bundle__={};
@@ -1835,469 +1867,9 @@ window.__nefbl_pack__bundleSrc__['2']=function(){
   
     return __nefbl_pack__scope_bundle__;
 }
+
 /*************************** [bundle] ****************************/
-// D:\hai2007\nefbl\pack\test\node_modules\@hai2007\polyfill\.inner\globalNAMESPACE.js
-/*****************************************************************/
-window.__nefbl_pack__bundleSrc__['3']=function(){
-    var __nefbl_pack__scope_bundle__={};
-    var __nefbl_pack__scope_args__;
-    var globalNAMESPACE = (function () {
-
-    // 浏览器环境
-    if (typeof window !== 'undefined') return window;
-
-    // nodejs环境
-    if (typeof global !== 'undefined') return global;
-
-    throw new Error('The current environment is not known!');
-
-})();
-
-// 获取当前环境的全局变量
-__nefbl_pack__scope_bundle__.default= globalNAMESPACE;
-
-  
-    return __nefbl_pack__scope_bundle__;
-}
-/*************************** [bundle] ****************************/
-// D:\hai2007\nefbl\pack\test\node_modules\@hai2007\tool\.inner\type\isObject.js
-/*****************************************************************/
-window.__nefbl_pack__bundleSrc__['4']=function(){
-    var __nefbl_pack__scope_bundle__={};
-    var __nefbl_pack__scope_args__;
-    /**
- * 判断一个值是不是Object。
- *
- * @param {*} value 需要判断类型的值
- * @returns {boolean} 如果是Object返回true，否则返回false
- */
-__nefbl_pack__scope_bundle__.default= function (value) {
-    var type = typeof value;
-    return value != null && (type === 'object' || type === 'function');
-};
-
-  
-    return __nefbl_pack__scope_bundle__;
-}
-/*************************** [bundle] ****************************/
-// D:\hai2007\nefbl\pack\test\node_modules\@hai2007\tool\.inner\type\getType.js
-/*****************************************************************/
-window.__nefbl_pack__bundleSrc__['5']=function(){
-    var __nefbl_pack__scope_bundle__={};
-    var __nefbl_pack__scope_args__;
-    var toString = Object.prototype.toString;
-
-/**
- * 获取一个值的类型字符串[object type]
- *
- * @param {*} value 需要返回类型的值
- * @returns {string} 返回类型字符串
- */
-__nefbl_pack__scope_bundle__.default= function (value) {
-    if (value == null) {
-        return value === undefined ? '[object Undefined]' : '[object Null]';
-    }
-    return toString.call(value);
-};
-
-  
-    return __nefbl_pack__scope_bundle__;
-}
-/*************************** [bundle] ****************************/
-// D:\hai2007\nefbl\pack\test\node_modules\@hai2007\tool\.inner\type\isBoolean.js
-/*****************************************************************/
-window.__nefbl_pack__bundleSrc__['6']=function(){
-    var __nefbl_pack__scope_bundle__={};
-    var __nefbl_pack__scope_args__;
-    __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('5');
-var getType =__nefbl_pack__scope_args__.default;
-
-
-/**
- * 判断一个值是不是Boolean。
- *
- * @param {*} value 需要判断类型的值
- * @returns {boolean} 如果是Boolean返回true，否则返回false
- */
-__nefbl_pack__scope_bundle__.default= function (value) {
-    return value === true || value === false ||
-        (value !== null && typeof value === 'object' && getType(value) === '[object Boolean]');
-};
-
-  
-    return __nefbl_pack__scope_bundle__;
-}
-/*************************** [bundle] ****************************/
-// D:\hai2007\nefbl\pack\test\node_modules\@hai2007\tool\.inner\type\isNumber.js
-/*****************************************************************/
-window.__nefbl_pack__bundleSrc__['7']=function(){
-    var __nefbl_pack__scope_bundle__={};
-    var __nefbl_pack__scope_args__;
-    __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('5');
-var getType =__nefbl_pack__scope_args__.default;
-
-
-/**
- * 判断一个值是不是number。
- *
- * @param {*} value 需要判断类型的值
- * @returns {boolean} 如果是number返回true，否则返回false
- */
-__nefbl_pack__scope_bundle__.default= function (value) {
-    return typeof value === 'number' || (
-        value !== null && typeof value === 'object' &&
-        getType(value) === '[object Number]'
-    );
-};
-
-  
-    return __nefbl_pack__scope_bundle__;
-}
-/*************************** [bundle] ****************************/
-// D:\hai2007\nefbl\pack\test\node_modules\@hai2007\tool\.inner\type\isString.js
-/*****************************************************************/
-window.__nefbl_pack__bundleSrc__['8']=function(){
-    var __nefbl_pack__scope_bundle__={};
-    var __nefbl_pack__scope_args__;
-    __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('5');
-var getType =__nefbl_pack__scope_args__.default;
-
-
-/**
- * 判断一个值是不是String。
- *
- * @param {*} value 需要判断类型的值
- * @returns {boolean} 如果是String返回true，否则返回false
- */
-__nefbl_pack__scope_bundle__.default= function (value) {
-    var type = typeof value;
-    return type === 'string' || (type === 'object' && value != null && !Array.isArray(value) && getType(value) === '[object String]');
-};
-
-  
-    return __nefbl_pack__scope_bundle__;
-}
-/*************************** [bundle] ****************************/
-// D:\hai2007\nefbl\pack\test\node_modules\@hai2007\tool\.inner\type\isSymbol.js
-/*****************************************************************/
-window.__nefbl_pack__bundleSrc__['9']=function(){
-    var __nefbl_pack__scope_bundle__={};
-    var __nefbl_pack__scope_args__;
-    __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('5');
-var getType =__nefbl_pack__scope_args__.default;
-
-
-/**
- * 判断一个值是不是symbol。
- *
- * @param {*} value 需要判断类型的值
- * @returns {boolean} 如果是symbol返回true，否则返回false
- */
-__nefbl_pack__scope_bundle__.default= function (value) {
-    var type = typeof value;
-    return type === 'symbol' || (type === 'object' && value !== null && getType(value) === '[object Symbol]');
-};
-
-  
-    return __nefbl_pack__scope_bundle__;
-}
-/*************************** [bundle] ****************************/
-// D:\hai2007\nefbl\pack\test\node_modules\@hai2007\tool\.inner\type\isFunction.js
-/*****************************************************************/
-window.__nefbl_pack__bundleSrc__['10']=function(){
-    var __nefbl_pack__scope_bundle__={};
-    var __nefbl_pack__scope_args__;
-    __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('5');
-var getType =__nefbl_pack__scope_args__.default;
-
-__nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('4');
-var isObject =__nefbl_pack__scope_args__.default;
-
-
-/**
- * 判断一个值是不是Function。
- *
- * @param {*} value 需要判断类型的值
- * @returns {boolean} 如果是Function返回true，否则返回false
- */
-__nefbl_pack__scope_bundle__.default= function (value) {
-    if (!isObject(value)) {
-        return false;
-    }
-
-    var type = getType(value);
-    return type === '[object Function]' || type === '[object AsyncFunction]' ||
-        type === '[object GeneratorFunction]' || type === '[object Proxy]';
-};
-
-  
-    return __nefbl_pack__scope_bundle__;
-}
-/*************************** [bundle] ****************************/
-// D:\hai2007\nefbl\pack\test\node_modules\@hai2007\tool\.inner\type\isPlainObject.js
-/*****************************************************************/
-window.__nefbl_pack__bundleSrc__['11']=function(){
-    var __nefbl_pack__scope_bundle__={};
-    var __nefbl_pack__scope_args__;
-    __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('5');
-var getType =__nefbl_pack__scope_args__.default;
-
-
-/**
- * 判断一个值是不是一个朴素的'对象'
- * 所谓"纯粹的对象"，就是该对象是通过"{}"或"new Object"创建的
- *
- * @param {*} value 需要判断类型的值
- * @returns {boolean} 如果是朴素的'对象'返回true，否则返回false
- */
-
-__nefbl_pack__scope_bundle__.default= function (value) {
-    if (value === null || typeof value !== 'object' || getType(value) != '[object Object]') {
-        return false;
-    }
-
-    // 如果原型为null
-    if (Object.getPrototypeOf(value) === null) {
-        return true;
-    }
-
-    var proto = value;
-    while (Object.getPrototypeOf(proto) !== null) {
-        proto = Object.getPrototypeOf(proto);
-    }
-    return Object.getPrototypeOf(value) === proto;
-};
-
-  
-    return __nefbl_pack__scope_bundle__;
-}
-/*************************** [bundle] ****************************/
-// D:\hai2007\nefbl\pack\test\node_modules\@hai2007\tool\.inner\type\isError.js
-/*****************************************************************/
-window.__nefbl_pack__bundleSrc__['12']=function(){
-    var __nefbl_pack__scope_bundle__={};
-    var __nefbl_pack__scope_args__;
-    __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('11');
-var isPlainObject =__nefbl_pack__scope_args__.default;
-
-__nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('5');
-var getType =__nefbl_pack__scope_args__.default;
-
-
-/**
- * 判断一个值是不是错误对象。
- * `Error`, `EvalError`, `RangeError`, `ReferenceError`,`SyntaxError`, `TypeError`, or `URIError`
- *
- * @param {*} value 需要判断类型的值
- * @returns {boolean} 如果是错误对象返回true，否则返回false
- */
-__nefbl_pack__scope_bundle__.default= function (value) {
-    if (value === null || typeof value !== 'object') {
-        return false;
-    }
-
-    var type = getType(value);
-    return type === '[object Error]' || type === '[object DOMException]' ||
-        (typeof value.message === 'string' && typeof value.name === 'string' && !isPlainObject(value));
-};
-
-  
-    return __nefbl_pack__scope_bundle__;
-}
-/*************************** [bundle] ****************************/
-// D:\hai2007\nefbl\pack\test\node_modules\@hai2007\tool\type.js
-/*****************************************************************/
-window.__nefbl_pack__bundleSrc__['13']=function(){
-    var __nefbl_pack__scope_bundle__={};
-    var __nefbl_pack__scope_args__;
-    __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('4');
-var _isObject =__nefbl_pack__scope_args__.default;
-
-
-__nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('6');
-var _isBoolean =__nefbl_pack__scope_args__.default;
-
-__nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('7');
-var _isNumber =__nefbl_pack__scope_args__.default;
-
-__nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('8');
-var _isString =__nefbl_pack__scope_args__.default;
-
-__nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('9');
-var _isSymbol =__nefbl_pack__scope_args__.default;
-
-
-__nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('10');
-var _isFunction =__nefbl_pack__scope_args__.default;
-
-
-__nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('12');
-var _isError =__nefbl_pack__scope_args__.default;
-
-__nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('11');
-var _isPlainObject =__nefbl_pack__scope_args__.default;
-
-
-var domTypeHelp = function (types, value) {
-    return value !== null && typeof value === 'object' &&
-        types.indexOf(value.nodeType) > -1 &&
-        !_isPlainObject(value);
-};
-
-/*!
- * 💡 - 值类型判断方法
- * https://github.com/hai2007/tool.js/blob/master/type.js
- *
- * author hai2007 < https://hai2007.gitee.io/sweethome >
- *
- * Copyright (c) 2020-present hai2007 走一步，再走一步。
- * Released under the MIT license
- */
-
-__nefbl_pack__scope_bundle__.isObject = _isObject;
-
-// 基本类型
-__nefbl_pack__scope_bundle__.isUndefined = function (input) { return input === undefined };
-__nefbl_pack__scope_bundle__.isNull = function (input) { return input === null };
-__nefbl_pack__scope_bundle__.isBoolean = _isBoolean;
-__nefbl_pack__scope_bundle__.isNumber = _isNumber;
-__nefbl_pack__scope_bundle__.isString = _isString;
-__nefbl_pack__scope_bundle__.isSymbol = _isSymbol;
-
-// 引用类型
-__nefbl_pack__scope_bundle__.isFunction = _isFunction;
-__nefbl_pack__scope_bundle__.isArray = function (input) { return Array.isArray(input) };
-__nefbl_pack__scope_bundle__.isError = _isError;
-__nefbl_pack__scope_bundle__.isPlainObject = _isPlainObject;
-
-// 结点类型
-__nefbl_pack__scope_bundle__.isElement = function (input) { return domTypeHelp([1, 9, 11], input) };
-__nefbl_pack__scope_bundle__.isAttribute = function (input) { return domTypeHelp([2], input) };
-__nefbl_pack__scope_bundle__.isText = function (input) { return domTypeHelp([3], input) };
-__nefbl_pack__scope_bundle__.isComment = function (input) { return domTypeHelp([8], input) };
-
-  
-    return __nefbl_pack__scope_bundle__;
-}
-/*************************** [bundle] ****************************/
-// D:\hai2007\nefbl\pack\test\node_modules\@hai2007\polyfill\.inner\Promise\doResolve.js
-/*****************************************************************/
-window.__nefbl_pack__bundleSrc__['14']=function(){
-    var __nefbl_pack__scope_bundle__={};
-    var __nefbl_pack__scope_args__;
-    __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('13');
-var isFunction=__nefbl_pack__scope_args__.isFunction;
-var isObject=__nefbl_pack__scope_args__.isObject;
-
-
-__nefbl_pack__scope_bundle__.changeState = function (data, state) {
-
-    // 更改状态
-    this.__state = state;
-    this.__value = data;
-
-    // 由于状态改变了，触发对then，finnaly，catch等的执行更新
-    this.$$triggerEvent();
-
-};
-
-__nefbl_pack__scope_bundle__.triggerEvent = function () {
-
-    // 这个方法的任务就是把__hocks中记录的方法依次执行了
-    // 什么时候会停止？两种情况：
-    // 1.队列执行完了
-    // 2.遇到其中一个执行方法返回Promise
-
-    var currentHock = null;
-
-    // 同意状态就去寻找下一个onFulfilled
-    // 拒绝状态就去寻找下一个onRejected
-    // 数组下标0和1分别记录这两个状态，因此先根据状态确定下标即可
-    var index = this.__state == 'fulfilled' ? 0 : 1, i;
-
-    // 可能找到，可能到结尾都没有找到
-    while (this.__hocks.length > 0) {
-
-        if (isFunction(this.__hocks[0][index])) {
-            currentHock = this.__hocks.shift();
-            break;
-        }
-
-        // 对于路过的finally执行一下
-        else if (isFunction(this.__hocks[0][2])) {
-            this.__hocks[0][2]();
-        }
-
-        this.__hocks.shift();
-
-    }
-
-    // 如果找到了
-    if (currentHock !== null) {
-        var result = currentHock[index](this.__value);
-
-        // 如果是Promise
-        if (isObject(result) && result.constructor === this.constructor) {
-            for (var i = 0; i < this.__hocks.length; i++) {
-                result.__hocks.push(this.__hocks[i]);
-                if (result.__state != 'pending') result.$$triggerEvent();
-            }
-
-            this.then = function (onFulfilled, onRejected) {
-
-                result.then(onFulfilled, onRejected);
-            };
-            this.catch = function (onRejected) {
-
-                result.catch(onRejected);
-            };
-            this.finally = function (callback) {
-
-                result.finally(callback);
-            };
-
-        }
-
-        // 否则
-        else {
-
-            this.__value = result;
-            this.__state = "fulfilled";
-            this.$$triggerEvent();
-
-        }
-
-    }
-
-};
-
-__nefbl_pack__scope_bundle__.doResolve = function (doback, that) {
-
-    // 防止重复修改状态
-    var done = false;
-
-    try {
-        doback(function (value) {
-            if (done) return; done = true;
-            that.$$changeState(value, 'fulfilled');
-
-        }, function (reason) {
-            if (done) return; done = true;
-            that.$$changeState(reason, 'rejected');
-
-        });
-    } catch (error) {
-        if (done) return; done = true;
-        that.$$changeState(error, 'rejected');
-    }
-
-};
-
-  
-    return __nefbl_pack__scope_bundle__;
-}
-/*************************** [bundle] ****************************/
-// D:\hai2007\nefbl\pack\test\node_modules\@hai2007\polyfill\Promise.js
+// 原始文件：./node_modules/@hai2007/polyfill/Promise.js
 /*****************************************************************/
 window.__nefbl_pack__bundleSrc__['15']=function(){
     var __nefbl_pack__scope_bundle__={};
@@ -2635,30 +2207,527 @@ if (!('Promise' in globalNAMESPACE)) {
   
     return __nefbl_pack__scope_bundle__;
 }
+
 /*************************** [bundle] ****************************/
-// D:\hai2007\nefbl\pack\test\src\App\index.scss
+// 原始文件：./node_modules/@hai2007/polyfill/.inner/globalNAMESPACE.js
 /*****************************************************************/
-window.__nefbl_pack__bundleSrc__['16']=function(){
+window.__nefbl_pack__bundleSrc__['3']=function(){
     var __nefbl_pack__scope_bundle__={};
     var __nefbl_pack__scope_args__;
-    __nefbl_pack__scope_bundle__.default= "\n .help{\n\ntext-align: center;\n\nmargin-top: 100px;\n\n}\n\n .help>div.logo{\n\nbackground-image: url('./logo.png');\n\nheight: 200px;\n\nbackground-repeat: no-repeat;\n\nbackground-position: center;\n\nbackground-size: auto 80%;\n\n}\n\n .help>div.links>a{\n\nfont-size: 14px;\n\nfont-weight: 800;\n\npadding:10px;\n\n}\n"
+    var globalNAMESPACE = (function () {
+
+    // 浏览器环境
+    if (typeof window !== 'undefined') return window;
+
+    // nodejs环境
+    if (typeof global !== 'undefined') return global;
+
+    throw new Error('The current environment is not known!');
+
+})();
+
+// 获取当前环境的全局变量
+__nefbl_pack__scope_bundle__.default= globalNAMESPACE;
+
   
     return __nefbl_pack__scope_bundle__;
 }
+
 /*************************** [bundle] ****************************/
-// D:\hai2007\nefbl\pack\test\src\App\index.html
+// 原始文件：./node_modules/@hai2007/tool/type.js
 /*****************************************************************/
-window.__nefbl_pack__bundleSrc__['17']=function(){
+window.__nefbl_pack__bundleSrc__['13']=function(){
     var __nefbl_pack__scope_bundle__={};
     var __nefbl_pack__scope_args__;
-    __nefbl_pack__scope_bundle__.default= "<div class=\"help\">\n    <div class=\"logo\"></div>\n    <div class=\"links\">\n        <a href=\"https://nefbl.github.io/api/\" target=\"_blank\">文档</a>\n        |\n        <a href=\"https://github.com/nefbl/nefbl\" target=\"_blank\">源码</a>\n        |\n        <a href=\"https://hai2007.gitee.io/sweethome/\" target=\"_blank\">作者</a>\n    </div>\n</div>\n\n<input type=\"text\" ui-model='param' />\n<input type=\"text\" ui-model='param' />\n"
+    __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('4');
+var _isObject =__nefbl_pack__scope_args__.default;
+
+
+__nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('6');
+var _isBoolean =__nefbl_pack__scope_args__.default;
+
+__nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('7');
+var _isNumber =__nefbl_pack__scope_args__.default;
+
+__nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('8');
+var _isString =__nefbl_pack__scope_args__.default;
+
+__nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('9');
+var _isSymbol =__nefbl_pack__scope_args__.default;
+
+
+__nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('10');
+var _isFunction =__nefbl_pack__scope_args__.default;
+
+
+__nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('12');
+var _isError =__nefbl_pack__scope_args__.default;
+
+__nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('11');
+var _isPlainObject =__nefbl_pack__scope_args__.default;
+
+
+var domTypeHelp = function (types, value) {
+    return value !== null && typeof value === 'object' &&
+        types.indexOf(value.nodeType) > -1 &&
+        !_isPlainObject(value);
+};
+
+/*!
+ * 💡 - 值类型判断方法
+ * https://github.com/hai2007/tool.js/blob/master/type.js
+ *
+ * author hai2007 < https://hai2007.gitee.io/sweethome >
+ *
+ * Copyright (c) 2020-present hai2007 走一步，再走一步。
+ * Released under the MIT license
+ */
+
+__nefbl_pack__scope_bundle__.isObject = _isObject;
+
+// 基本类型
+__nefbl_pack__scope_bundle__.isUndefined = function (input) { return input === undefined };
+__nefbl_pack__scope_bundle__.isNull = function (input) { return input === null };
+__nefbl_pack__scope_bundle__.isBoolean = _isBoolean;
+__nefbl_pack__scope_bundle__.isNumber = _isNumber;
+__nefbl_pack__scope_bundle__.isString = _isString;
+__nefbl_pack__scope_bundle__.isSymbol = _isSymbol;
+
+// 引用类型
+__nefbl_pack__scope_bundle__.isFunction = _isFunction;
+__nefbl_pack__scope_bundle__.isArray = function (input) { return Array.isArray(input) };
+__nefbl_pack__scope_bundle__.isError = _isError;
+__nefbl_pack__scope_bundle__.isPlainObject = _isPlainObject;
+
+// 结点类型
+__nefbl_pack__scope_bundle__.isElement = function (input) { return domTypeHelp([1, 9, 11], input) };
+__nefbl_pack__scope_bundle__.isAttribute = function (input) { return domTypeHelp([2], input) };
+__nefbl_pack__scope_bundle__.isText = function (input) { return domTypeHelp([3], input) };
+__nefbl_pack__scope_bundle__.isComment = function (input) { return domTypeHelp([8], input) };
+
   
     return __nefbl_pack__scope_bundle__;
 }
+
 /*************************** [bundle] ****************************/
-// D:\hai2007\nefbl\pack\test\src\App\index.ts
+// 原始文件：./node_modules/@hai2007/tool/.inner/type/isObject.js
 /*****************************************************************/
-window.__nefbl_pack__bundleSrc__['18']=function(){
+window.__nefbl_pack__bundleSrc__['4']=function(){
+    var __nefbl_pack__scope_bundle__={};
+    var __nefbl_pack__scope_args__;
+    /**
+ * 判断一个值是不是Object。
+ *
+ * @param {*} value 需要判断类型的值
+ * @returns {boolean} 如果是Object返回true，否则返回false
+ */
+__nefbl_pack__scope_bundle__.default= function (value) {
+    var type = typeof value;
+    return value != null && (type === 'object' || type === 'function');
+};
+
+  
+    return __nefbl_pack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// 原始文件：./node_modules/@hai2007/tool/.inner/type/isBoolean.js
+/*****************************************************************/
+window.__nefbl_pack__bundleSrc__['6']=function(){
+    var __nefbl_pack__scope_bundle__={};
+    var __nefbl_pack__scope_args__;
+    __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('5');
+var getType =__nefbl_pack__scope_args__.default;
+
+
+/**
+ * 判断一个值是不是Boolean。
+ *
+ * @param {*} value 需要判断类型的值
+ * @returns {boolean} 如果是Boolean返回true，否则返回false
+ */
+__nefbl_pack__scope_bundle__.default= function (value) {
+    return value === true || value === false ||
+        (value !== null && typeof value === 'object' && getType(value) === '[object Boolean]');
+};
+
+  
+    return __nefbl_pack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// 原始文件：./node_modules/@hai2007/tool/.inner/type/getType.js
+/*****************************************************************/
+window.__nefbl_pack__bundleSrc__['5']=function(){
+    var __nefbl_pack__scope_bundle__={};
+    var __nefbl_pack__scope_args__;
+    var toString = Object.prototype.toString;
+
+/**
+ * 获取一个值的类型字符串[object type]
+ *
+ * @param {*} value 需要返回类型的值
+ * @returns {string} 返回类型字符串
+ */
+__nefbl_pack__scope_bundle__.default= function (value) {
+    if (value == null) {
+        return value === undefined ? '[object Undefined]' : '[object Null]';
+    }
+    return toString.call(value);
+};
+
+  
+    return __nefbl_pack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// 原始文件：./node_modules/@hai2007/tool/.inner/type/isNumber.js
+/*****************************************************************/
+window.__nefbl_pack__bundleSrc__['7']=function(){
+    var __nefbl_pack__scope_bundle__={};
+    var __nefbl_pack__scope_args__;
+    __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('5');
+var getType =__nefbl_pack__scope_args__.default;
+
+
+/**
+ * 判断一个值是不是number。
+ *
+ * @param {*} value 需要判断类型的值
+ * @returns {boolean} 如果是number返回true，否则返回false
+ */
+__nefbl_pack__scope_bundle__.default= function (value) {
+    return typeof value === 'number' || (
+        value !== null && typeof value === 'object' &&
+        getType(value) === '[object Number]'
+    );
+};
+
+  
+    return __nefbl_pack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// 原始文件：./node_modules/@hai2007/tool/.inner/type/isString.js
+/*****************************************************************/
+window.__nefbl_pack__bundleSrc__['8']=function(){
+    var __nefbl_pack__scope_bundle__={};
+    var __nefbl_pack__scope_args__;
+    __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('5');
+var getType =__nefbl_pack__scope_args__.default;
+
+
+/**
+ * 判断一个值是不是String。
+ *
+ * @param {*} value 需要判断类型的值
+ * @returns {boolean} 如果是String返回true，否则返回false
+ */
+__nefbl_pack__scope_bundle__.default= function (value) {
+    var type = typeof value;
+    return type === 'string' || (type === 'object' && value != null && !Array.isArray(value) && getType(value) === '[object String]');
+};
+
+  
+    return __nefbl_pack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// 原始文件：./node_modules/@hai2007/tool/.inner/type/isSymbol.js
+/*****************************************************************/
+window.__nefbl_pack__bundleSrc__['9']=function(){
+    var __nefbl_pack__scope_bundle__={};
+    var __nefbl_pack__scope_args__;
+    __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('5');
+var getType =__nefbl_pack__scope_args__.default;
+
+
+/**
+ * 判断一个值是不是symbol。
+ *
+ * @param {*} value 需要判断类型的值
+ * @returns {boolean} 如果是symbol返回true，否则返回false
+ */
+__nefbl_pack__scope_bundle__.default= function (value) {
+    var type = typeof value;
+    return type === 'symbol' || (type === 'object' && value !== null && getType(value) === '[object Symbol]');
+};
+
+  
+    return __nefbl_pack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// 原始文件：./node_modules/@hai2007/tool/.inner/type/isFunction.js
+/*****************************************************************/
+window.__nefbl_pack__bundleSrc__['10']=function(){
+    var __nefbl_pack__scope_bundle__={};
+    var __nefbl_pack__scope_args__;
+    __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('5');
+var getType =__nefbl_pack__scope_args__.default;
+
+__nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('4');
+var isObject =__nefbl_pack__scope_args__.default;
+
+
+/**
+ * 判断一个值是不是Function。
+ *
+ * @param {*} value 需要判断类型的值
+ * @returns {boolean} 如果是Function返回true，否则返回false
+ */
+__nefbl_pack__scope_bundle__.default= function (value) {
+    if (!isObject(value)) {
+        return false;
+    }
+
+    var type = getType(value);
+    return type === '[object Function]' || type === '[object AsyncFunction]' ||
+        type === '[object GeneratorFunction]' || type === '[object Proxy]';
+};
+
+  
+    return __nefbl_pack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// 原始文件：./node_modules/@hai2007/tool/.inner/type/isError.js
+/*****************************************************************/
+window.__nefbl_pack__bundleSrc__['12']=function(){
+    var __nefbl_pack__scope_bundle__={};
+    var __nefbl_pack__scope_args__;
+    __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('11');
+var isPlainObject =__nefbl_pack__scope_args__.default;
+
+__nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('5');
+var getType =__nefbl_pack__scope_args__.default;
+
+
+/**
+ * 判断一个值是不是错误对象。
+ * `Error`, `EvalError`, `RangeError`, `ReferenceError`,`SyntaxError`, `TypeError`, or `URIError`
+ *
+ * @param {*} value 需要判断类型的值
+ * @returns {boolean} 如果是错误对象返回true，否则返回false
+ */
+__nefbl_pack__scope_bundle__.default= function (value) {
+    if (value === null || typeof value !== 'object') {
+        return false;
+    }
+
+    var type = getType(value);
+    return type === '[object Error]' || type === '[object DOMException]' ||
+        (typeof value.message === 'string' && typeof value.name === 'string' && !isPlainObject(value));
+};
+
+  
+    return __nefbl_pack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// 原始文件：./node_modules/@hai2007/tool/.inner/type/isPlainObject.js
+/*****************************************************************/
+window.__nefbl_pack__bundleSrc__['11']=function(){
+    var __nefbl_pack__scope_bundle__={};
+    var __nefbl_pack__scope_args__;
+    __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('5');
+var getType =__nefbl_pack__scope_args__.default;
+
+
+/**
+ * 判断一个值是不是一个朴素的'对象'
+ * 所谓"纯粹的对象"，就是该对象是通过"{}"或"new Object"创建的
+ *
+ * @param {*} value 需要判断类型的值
+ * @returns {boolean} 如果是朴素的'对象'返回true，否则返回false
+ */
+
+__nefbl_pack__scope_bundle__.default= function (value) {
+    if (value === null || typeof value !== 'object' || getType(value) != '[object Object]') {
+        return false;
+    }
+
+    // 如果原型为null
+    if (Object.getPrototypeOf(value) === null) {
+        return true;
+    }
+
+    var proto = value;
+    while (Object.getPrototypeOf(proto) !== null) {
+        proto = Object.getPrototypeOf(proto);
+    }
+    return Object.getPrototypeOf(value) === proto;
+};
+
+  
+    return __nefbl_pack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// 原始文件：./node_modules/@hai2007/polyfill/.inner/Promise/doResolve.js
+/*****************************************************************/
+window.__nefbl_pack__bundleSrc__['14']=function(){
+    var __nefbl_pack__scope_bundle__={};
+    var __nefbl_pack__scope_args__;
+    __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('13');
+var isFunction=__nefbl_pack__scope_args__.isFunction;
+var isObject=__nefbl_pack__scope_args__.isObject;
+
+
+__nefbl_pack__scope_bundle__.changeState = function (data, state) {
+
+    // 更改状态
+    this.__state = state;
+    this.__value = data;
+
+    // 由于状态改变了，触发对then，finnaly，catch等的执行更新
+    this.$$triggerEvent();
+
+};
+
+__nefbl_pack__scope_bundle__.triggerEvent = function () {
+
+    // 这个方法的任务就是把__hocks中记录的方法依次执行了
+    // 什么时候会停止？两种情况：
+    // 1.队列执行完了
+    // 2.遇到其中一个执行方法返回Promise
+
+    var currentHock = null;
+
+    // 同意状态就去寻找下一个onFulfilled
+    // 拒绝状态就去寻找下一个onRejected
+    // 数组下标0和1分别记录这两个状态，因此先根据状态确定下标即可
+    var index = this.__state == 'fulfilled' ? 0 : 1, i;
+
+    // 可能找到，可能到结尾都没有找到
+    while (this.__hocks.length > 0) {
+
+        if (isFunction(this.__hocks[0][index])) {
+            currentHock = this.__hocks.shift();
+            break;
+        }
+
+        // 对于路过的finally执行一下
+        else if (isFunction(this.__hocks[0][2])) {
+            this.__hocks[0][2]();
+        }
+
+        this.__hocks.shift();
+
+    }
+
+    // 如果找到了
+    if (currentHock !== null) {
+        var result = currentHock[index](this.__value);
+
+        // 如果是Promise
+        if (isObject(result) && result.constructor === this.constructor) {
+            for (var i = 0; i < this.__hocks.length; i++) {
+                result.__hocks.push(this.__hocks[i]);
+                if (result.__state != 'pending') result.$$triggerEvent();
+            }
+
+            this.then = function (onFulfilled, onRejected) {
+
+                result.then(onFulfilled, onRejected);
+            };
+            this.catch = function (onRejected) {
+
+                result.catch(onRejected);
+            };
+            this.finally = function (callback) {
+
+                result.finally(callback);
+            };
+
+        }
+
+        // 否则
+        else {
+
+            this.__value = result;
+            this.__state = "fulfilled";
+            this.$$triggerEvent();
+
+        }
+
+    }
+
+};
+
+__nefbl_pack__scope_bundle__.doResolve = function (doback, that) {
+
+    // 防止重复修改状态
+    var done = false;
+
+    try {
+        doback(function (value) {
+            if (done) return; done = true;
+            that.$$changeState(value, 'fulfilled');
+
+        }, function (reason) {
+            if (done) return; done = true;
+            that.$$changeState(reason, 'rejected');
+
+        });
+    } catch (error) {
+        if (done) return; done = true;
+        that.$$changeState(error, 'rejected');
+    }
+
+};
+
+  
+    return __nefbl_pack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// 原始文件：./src/app.module.ts
+/*****************************************************************/
+window.__nefbl_pack__bundleSrc__['27']=function(){
+    var __nefbl_pack__scope_bundle__={};
+    var __nefbl_pack__scope_args__;
+    var _dec, _class2;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+__nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('1');
+var Module=__nefbl_pack__scope_args__.Module;
+
+__nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('21');
+var AppComponent =__nefbl_pack__scope_args__.default;
+
+__nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('22');
+var uiBind =__nefbl_pack__scope_args__.default;
+
+__nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('24');
+var uiModel =__nefbl_pack__scope_args__.default;
+
+__nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('25');
+var uiOn =__nefbl_pack__scope_args__.default;
+
+__nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('26');
+var uiLazy =__nefbl_pack__scope_args__.default;
+
+
+var _class = (_dec = Module({
+  declarations: [AppComponent, uiBind, uiModel, uiOn, uiLazy],
+  imports: [],
+  exports: [],
+  bootstrap: AppComponent
+}), _dec(_class2 = function _class2() {
+  _classCallCheck(this, _class2);
+}) || _class2);
+
+__nefbl_pack__scope_bundle__.default=_class;
+  
+    return __nefbl_pack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// 原始文件：./src/App/index.ts
+/*****************************************************************/
+window.__nefbl_pack__bundleSrc__['21']=function(){
     var __nefbl_pack__scope_bundle__={};
     var __nefbl_pack__scope_args__;
     var _dec, _class2;
@@ -2668,6 +2737,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('1');
 var Component=__nefbl_pack__scope_args__.Component;
@@ -2679,6 +2750,9 @@ var style =__nefbl_pack__scope_args__.default;
 __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('17');
 var template =__nefbl_pack__scope_args__.default;
 
+__nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('20');
+var pages =__nefbl_pack__scope_args__.default;
+
 
 var _class = (_dec = Component({
   selector: "app-root",
@@ -2687,14 +2761,29 @@ var _class = (_dec = Component({
 }), _dec(_class2 = function () {
   function _class2() {
     _classCallCheck(this, _class2);
+
+    _defineProperty(this, "page", void 0);
   }
 
   _createClass(_class2, [{
     key: "$setup",
     value: function $setup() {
       return {
-        param: ref('初始化的值')
+        param: ref('初始化的值'),
+        page: ref(null)
       };
+    }
+  }, {
+    key: "loadPage",
+    value: function loadPage(event) {
+      var _this = this;
+
+      var page = pages["page" + event.target.getAttribute('tag')];
+      page().then(function (data) {
+        console.log(data["default"]);
+        console.log(_this);
+        _this.page = data["default"];
+      });
     }
   }]);
 
@@ -2705,10 +2794,51 @@ __nefbl_pack__scope_bundle__.default=_class;
   
     return __nefbl_pack__scope_bundle__;
 }
+
 /*************************** [bundle] ****************************/
-// D:\hai2007\nefbl\pack\test\node_modules\sprout-ui\nefbl\directive\ui-bind.ts
+// 原始文件：./src/App/index.scss
 /*****************************************************************/
-window.__nefbl_pack__bundleSrc__['19']=function(){
+window.__nefbl_pack__bundleSrc__['16']=function(){
+    var __nefbl_pack__scope_bundle__={};
+    var __nefbl_pack__scope_args__;
+    __nefbl_pack__scope_bundle__.default= "\n .help{\n\ntext-align: center;\n\nmargin-top: 100px;\n\n}\n\n .help>div.logo{\n\nbackground-image: url('./logo.png');\n\nheight: 200px;\n\nbackground-repeat: no-repeat;\n\nbackground-position: center;\n\nbackground-size: auto 80%;\n\n}\n\n .help>div.links>a{\n\nfont-size: 14px;\n\nfont-weight: 800;\n\npadding:10px;\n\n}\n"
+  
+    return __nefbl_pack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// 原始文件：./src/App/index.html
+/*****************************************************************/
+window.__nefbl_pack__bundleSrc__['17']=function(){
+    var __nefbl_pack__scope_bundle__={};
+    var __nefbl_pack__scope_args__;
+    __nefbl_pack__scope_bundle__.default= "<div class=\"help\">\n    <div class=\"logo\"></div>\n    <div class=\"links\">\n        <a href=\"https://nefbl.github.io/api/\" target=\"_blank\">文档</a>\n        |\n        <a href=\"https://github.com/nefbl/nefbl\" target=\"_blank\">源码</a>\n        |\n        <a href=\"https://hai2007.gitee.io/sweethome/\" target=\"_blank\">作者</a>\n    </div>\n</div>\n\n<hr />\n\n<input type=\"text\" ui-model='param' />\n<input type=\"text\" ui-model='param' />\n\n<hr />\n\n<button tag='1' ui-on:click='loadPage'>\n    页面一\n</button>\n<button tag='2' ui-on:click='loadPage'>\n    页面二\n</button>\n\n<div ui-lazy='page'></div>\n"
+  
+    return __nefbl_pack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// 原始文件：./src/App/lazy-load.js
+/*****************************************************************/
+window.__nefbl_pack__bundleSrc__['20']=function(){
+    var __nefbl_pack__scope_bundle__={};
+    var __nefbl_pack__scope_args__;
+    __nefbl_pack__scope_bundle__.default= {
+  page1: function page1() {
+    return window.__nefbl_pack__getLazyBundle('./build/main@v0.1.0-bundle1.js','18');
+  },
+  page2: function page2() {
+    return window.__nefbl_pack__getLazyBundle('./build/main@v0.1.0-bundle2.js','19');
+  }
+};
+  
+    return __nefbl_pack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// 原始文件：./node_modules/sprout-ui/nefbl/directive/ui-bind.ts
+/*****************************************************************/
+window.__nefbl_pack__bundleSrc__['22']=function(){
     var __nefbl_pack__scope_bundle__={};
     var __nefbl_pack__scope_args__;
     var _dec, _class2;
@@ -2764,10 +2894,63 @@ __nefbl_pack__scope_bundle__.default=_class;
   
     return __nefbl_pack__scope_bundle__;
 }
+
 /*************************** [bundle] ****************************/
-// D:\hai2007\nefbl\pack\test\node_modules\@hai2007\tool\xhtml.js
+// 原始文件：./node_modules/sprout-ui/nefbl/directive/ui-model.ts
 /*****************************************************************/
-window.__nefbl_pack__bundleSrc__['20']=function(){
+window.__nefbl_pack__bundleSrc__['24']=function(){
+    var __nefbl_pack__scope_bundle__={};
+    var __nefbl_pack__scope_args__;
+    var _dec, _class2;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+__nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('1');
+var Directive=__nefbl_pack__scope_args__.Directive;
+var setValue=__nefbl_pack__scope_args__.setValue;
+
+__nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('23');
+var xhtml =__nefbl_pack__scope_args__.default;
+
+
+var _class = (_dec = Directive({
+  selector: "ui-model"
+}), _dec(_class2 = function () {
+  function _class2() {
+    _classCallCheck(this, _class2);
+  }
+
+  _createClass(_class2, [{
+    key: "$inserted",
+    value: function $inserted(el, binding) {
+      el.value = binding.value;
+      xhtml.bind(el, 'input', function () {
+        setValue(binding.target, "." + binding.exp, el.value);
+      });
+    }
+  }, {
+    key: "$update",
+    value: function $update(el, binding) {
+      el.value = binding.value;
+    }
+  }]);
+
+  return _class2;
+}()) || _class2);
+
+__nefbl_pack__scope_bundle__.default=_class;
+  
+    return __nefbl_pack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// 原始文件：./node_modules/@hai2007/tool/xhtml.js
+/*****************************************************************/
+window.__nefbl_pack__bundleSrc__['23']=function(){
     var __nefbl_pack__scope_bundle__={};
     var __nefbl_pack__scope_args__;
     /*!
@@ -3078,61 +3261,11 @@ __nefbl_pack__scope_bundle__.default= {
   
     return __nefbl_pack__scope_bundle__;
 }
+
 /*************************** [bundle] ****************************/
-// D:\hai2007\nefbl\pack\test\node_modules\sprout-ui\nefbl\directive\ui-model.ts
+// 原始文件：./node_modules/sprout-ui/nefbl/directive/ui-on.ts
 /*****************************************************************/
-window.__nefbl_pack__bundleSrc__['21']=function(){
-    var __nefbl_pack__scope_bundle__={};
-    var __nefbl_pack__scope_args__;
-    var _dec, _class2;
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-__nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('1');
-var Directive=__nefbl_pack__scope_args__.Directive;
-var setValue=__nefbl_pack__scope_args__.setValue;
-
-__nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('20');
-var xhtml =__nefbl_pack__scope_args__.default;
-
-
-var _class = (_dec = Directive({
-  selector: "ui-model"
-}), _dec(_class2 = function () {
-  function _class2() {
-    _classCallCheck(this, _class2);
-  }
-
-  _createClass(_class2, [{
-    key: "$inserted",
-    value: function $inserted(el, binding) {
-      el.value = binding.value;
-      xhtml.bind(el, 'input', function () {
-        setValue(binding.target, "." + binding.exp, el.value);
-      });
-    }
-  }, {
-    key: "$update",
-    value: function $update(el, binding) {
-      el.value = binding.value;
-    }
-  }]);
-
-  return _class2;
-}()) || _class2);
-
-__nefbl_pack__scope_bundle__.default=_class;
-  
-    return __nefbl_pack__scope_bundle__;
-}
-/*************************** [bundle] ****************************/
-// D:\hai2007\nefbl\pack\test\node_modules\sprout-ui\nefbl\directive\ui-on.ts
-/*****************************************************************/
-window.__nefbl_pack__bundleSrc__['22']=function(){
+window.__nefbl_pack__bundleSrc__['25']=function(){
     var __nefbl_pack__scope_bundle__={};
     var __nefbl_pack__scope_args__;
     var _dec, _class2;
@@ -3146,7 +3279,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('1');
 var Directive=__nefbl_pack__scope_args__.Directive;
 
-__nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('20');
+__nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('23');
 var xhtml =__nefbl_pack__scope_args__.default;
 
 
@@ -3191,67 +3324,49 @@ __nefbl_pack__scope_bundle__.default=_class;
   
     return __nefbl_pack__scope_bundle__;
 }
+
 /*************************** [bundle] ****************************/
-// D:\hai2007\nefbl\pack\test\src\app.module.ts
+// 原始文件：./node_modules/sprout-ui/nefbl/directive/ui-lazy.ts
 /*****************************************************************/
-window.__nefbl_pack__bundleSrc__['23']=function(){
+window.__nefbl_pack__bundleSrc__['26']=function(){
     var __nefbl_pack__scope_bundle__={};
     var __nefbl_pack__scope_args__;
     var _dec, _class2;
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
 __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('1');
-var Module=__nefbl_pack__scope_args__.Module;
-
-__nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('18');
-var AppComponent =__nefbl_pack__scope_args__.default;
-
-__nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('19');
-var uiBind =__nefbl_pack__scope_args__.default;
-
-__nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('21');
-var uiModel =__nefbl_pack__scope_args__.default;
-
-__nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('22');
-var uiOn =__nefbl_pack__scope_args__.default;
+var Directive=__nefbl_pack__scope_args__.Directive;
+var mountComponent=__nefbl_pack__scope_args__.mountComponent;
 
 
-var _class = (_dec = Module({
-  declarations: [AppComponent, uiBind, uiModel, uiOn],
-  imports: [],
-  exports: [],
-  bootstrap: AppComponent
-}), _dec(_class2 = function _class2() {
-  _classCallCheck(this, _class2);
-}) || _class2);
+var _class = (_dec = Directive({
+  selector: "ui-lazy"
+}), _dec(_class2 = function () {
+  function _class2() {
+    _classCallCheck(this, _class2);
+  }
+
+  _createClass(_class2, [{
+    key: "$update",
+    value: function $update(el, binding) {
+      if (binding.value) {
+        el.innerHTML = "";
+        mountComponent(el, binding.value, this['_module']);
+      }
+    }
+  }]);
+
+  return _class2;
+}()) || _class2);
 
 __nefbl_pack__scope_bundle__.default=_class;
   
     return __nefbl_pack__scope_bundle__;
 }
-/*************************** [bundle] ****************************/
-// D:\hai2007\nefbl\pack\test\src\main.ts
-/*****************************************************************/
-window.__nefbl_pack__bundleSrc__['24']=function(){
-    var __nefbl_pack__scope_bundle__={};
-    var __nefbl_pack__scope_args__;
-    __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('1');
-var platform=__nefbl_pack__scope_args__.platform;
 
-__nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('2');
-var normalize =__nefbl_pack__scope_args__.default;
-
-__nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('15');
-
-__nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('23');
-var appModule =__nefbl_pack__scope_args__.default;
-
-platform({
-  el: document.getElementById('root'),
-  styles: [normalize]
-}).bootstrap(appModule);
-  
-    return __nefbl_pack__scope_bundle__;
-}
-window.__nefbl_pack__bundleSrc__['24']();
+window.__nefbl_pack__bundleSrc__['28']();
