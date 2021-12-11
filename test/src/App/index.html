@@ -9,5 +9,18 @@
     </div>
 </div>
 
+<hr />
+
 <input type="text" ui-model='param' />
 <input type="text" ui-model='param' />
+
+<hr />
+
+<button tag='1' ui-on:click='loadPage'>
+    页面一
+</button>
+<button tag='2' ui-on:click='loadPage'>
+    页面二
+</button>
+
+<div ui-lazy='page'></div>
