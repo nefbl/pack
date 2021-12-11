@@ -24,8 +24,8 @@ export default class {
     loadPage(event) {
         let page = pages["page" + event.target.getAttribute('tag')]
         page().then(data => {
-            console.log(data.default)
-            console.log(this)
+            // console.log(data.default)
+            // console.log(this)
             this.page = data.default
         })
     }

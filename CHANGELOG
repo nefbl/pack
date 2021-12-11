@@ -24,3 +24,7 @@ v0.2.1:
     date:2021-12-10
     changes:
       -  新增build模式（和dev在配置上统一）
+v0.3.0:
+    date:2021-12-11
+    changes:
+      -  新增懒加载 ```()=>import(url)```
