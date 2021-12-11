@@ -6,7 +6,7 @@ module.exports = function (importResult) {
 
     // 需要解析参数结构
     for (let arg of importResult.args) {
-        if (arg == '__default__') {
+        if (arg == 'default') {
             argsCode += "var " + importResult.def + "=__nefbl_pack__scope_args__." + arg + ";\n";
         } else {
             argsCode += "var " + arg + "=__nefbl_pack__scope_args__." + arg + ";\n";

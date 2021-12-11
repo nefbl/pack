@@ -17,7 +17,7 @@ module.exports = function (statement, filecontext, config) {
 
         } else {
             def = statementArray[0];
-            args = ['__default__'];
+            args = ['default'];
         }
     }
 

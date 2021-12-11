@@ -1831,7 +1831,7 @@ __nefbl_pack__scope_bundle__.reactive = Nefbl.reactive;
 window.__nefbl_pack__bundleSrc__['2']=function(){
     var __nefbl_pack__scope_bundle__={};
     var __nefbl_pack__scope_args__;
-    __nefbl_pack__scope_bundle__.__default__= "/*!\n * 👁️ - 统一不同浏览器的基础样式\n * https://github.com/hai2007/style.css/blob/master/normalize.css\n *\n * author hai2007 < https://hai2007.gitee.io/sweethome >\n *\n * Copyright (c) 2020-present hai2007 走一步，再走一步。\n * Released under the MIT license\n */\n\nhtml {\n    /* 防止iPhone在坚屏转向横屏时放大文字 */\n    -ms-text-size-adjust: 100%;\n    -webkit-text-size-adjust: 100%;\n    /* 统一行高 */\n    line-height: 1.15;\n}\n\nbutton,\ninput {\n    /* 兼容部分手机下border不显示问题 */\n    border: 1px solid #b2b2bd;\n}\n\narticle,\nfooter,\nheader,\nnav,\nsection {\n    /* 修正旧浏览器未定义的块级元素 */\n    display: block;\n}\n\ncanvas,\nsvg {\n    /* 修正旧浏览器未定义的行内块元素 */\n    display: inline-block;\n}\n\n* {\n    /* 统一不同浏览器盒子尺寸计算方法 */\n    box-sizing: border-box;\n}\n\n::-ms-clear,\n::-ms-reveal {\n    /* 去掉IE浏览器输入框叉叉和眼睛 */\n    display: none;\n}\n\nimg {\n    /* 针对火狐浏览器在img标签没有src时候的差异修复 */\n    display: inline-block;\n}\n\nhtml {\n    /* 设置默认字体为统一的安全字体 */\n    font-family: sans-serif;\n}\n\na {\n    /* 默认去掉下划线 */\n    text-decoration: none;\n}\n\nli {\n    /* 去掉前置索引 */\n    list-style-type: none;\n}\n\nul,\nol,\nli,\np,\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n    /* 去掉不喜欢的间距 */\n    -webkit-margin-before: 0;\n    -webkit-margin-after: 0;\n    -webkit-padding-start: 0;\n    /* 去掉不喜欢的间距，针对火狐浏览器等 */\n    margin-block-end: 0;\n    margin-block-start: 0;\n    padding-inline-start: 0;\n    /* 修改IE和其它浏览器不一致问题 */\n    padding: 0;\n    margin: 0;\n}\n\nbody {\n    /* 去掉默认的8px */\n    margin: 0;\n}\n\ntable {\n    /* 设置默认表格边框合并为一个单一的边框 */\n    border-collapse: collapse;\n}\n"
+    __nefbl_pack__scope_bundle__.default= "/*!\n * 👁️ - 统一不同浏览器的基础样式\n * https://github.com/hai2007/style.css/blob/master/normalize.css\n *\n * author hai2007 < https://hai2007.gitee.io/sweethome >\n *\n * Copyright (c) 2020-present hai2007 走一步，再走一步。\n * Released under the MIT license\n */\n\nhtml {\n    /* 防止iPhone在坚屏转向横屏时放大文字 */\n    -ms-text-size-adjust: 100%;\n    -webkit-text-size-adjust: 100%;\n    /* 统一行高 */\n    line-height: 1.15;\n}\n\nbutton,\ninput {\n    /* 兼容部分手机下border不显示问题 */\n    border: 1px solid #b2b2bd;\n}\n\narticle,\nfooter,\nheader,\nnav,\nsection {\n    /* 修正旧浏览器未定义的块级元素 */\n    display: block;\n}\n\ncanvas,\nsvg {\n    /* 修正旧浏览器未定义的行内块元素 */\n    display: inline-block;\n}\n\n* {\n    /* 统一不同浏览器盒子尺寸计算方法 */\n    box-sizing: border-box;\n}\n\n::-ms-clear,\n::-ms-reveal {\n    /* 去掉IE浏览器输入框叉叉和眼睛 */\n    display: none;\n}\n\nimg {\n    /* 针对火狐浏览器在img标签没有src时候的差异修复 */\n    display: inline-block;\n}\n\nhtml {\n    /* 设置默认字体为统一的安全字体 */\n    font-family: sans-serif;\n}\n\na {\n    /* 默认去掉下划线 */\n    text-decoration: none;\n}\n\nli {\n    /* 去掉前置索引 */\n    list-style-type: none;\n}\n\nul,\nol,\nli,\np,\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n    /* 去掉不喜欢的间距 */\n    -webkit-margin-before: 0;\n    -webkit-margin-after: 0;\n    -webkit-padding-start: 0;\n    /* 去掉不喜欢的间距，针对火狐浏览器等 */\n    margin-block-end: 0;\n    margin-block-start: 0;\n    padding-inline-start: 0;\n    /* 修改IE和其它浏览器不一致问题 */\n    padding: 0;\n    margin: 0;\n}\n\nbody {\n    /* 去掉默认的8px */\n    margin: 0;\n}\n\ntable {\n    /* 设置默认表格边框合并为一个单一的边框 */\n    border-collapse: collapse;\n}\n"
   
     return __nefbl_pack__scope_bundle__;
 }
@@ -1854,7 +1854,7 @@ window.__nefbl_pack__bundleSrc__['3']=function(){
 })();
 
 // 获取当前环境的全局变量
-__nefbl_pack__scope_bundle__.__default__= globalNAMESPACE;
+__nefbl_pack__scope_bundle__.default= globalNAMESPACE;
 
   
     return __nefbl_pack__scope_bundle__;
@@ -1871,7 +1871,7 @@ window.__nefbl_pack__bundleSrc__['4']=function(){
  * @param {*} value 需要判断类型的值
  * @returns {boolean} 如果是Object返回true，否则返回false
  */
-__nefbl_pack__scope_bundle__.__default__= function (value) {
+__nefbl_pack__scope_bundle__.default= function (value) {
     var type = typeof value;
     return value != null && (type === 'object' || type === 'function');
 };
@@ -1893,7 +1893,7 @@ window.__nefbl_pack__bundleSrc__['5']=function(){
  * @param {*} value 需要返回类型的值
  * @returns {string} 返回类型字符串
  */
-__nefbl_pack__scope_bundle__.__default__= function (value) {
+__nefbl_pack__scope_bundle__.default= function (value) {
     if (value == null) {
         return value === undefined ? '[object Undefined]' : '[object Null]';
     }
@@ -1910,7 +1910,7 @@ window.__nefbl_pack__bundleSrc__['6']=function(){
     var __nefbl_pack__scope_bundle__={};
     var __nefbl_pack__scope_args__;
     __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('5');
-var getType =__nefbl_pack__scope_args__.__default__;
+var getType =__nefbl_pack__scope_args__.default;
 
 
 /**
@@ -1919,7 +1919,7 @@ var getType =__nefbl_pack__scope_args__.__default__;
  * @param {*} value 需要判断类型的值
  * @returns {boolean} 如果是Boolean返回true，否则返回false
  */
-__nefbl_pack__scope_bundle__.__default__= function (value) {
+__nefbl_pack__scope_bundle__.default= function (value) {
     return value === true || value === false ||
         (value !== null && typeof value === 'object' && getType(value) === '[object Boolean]');
 };
@@ -1934,7 +1934,7 @@ window.__nefbl_pack__bundleSrc__['7']=function(){
     var __nefbl_pack__scope_bundle__={};
     var __nefbl_pack__scope_args__;
     __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('5');
-var getType =__nefbl_pack__scope_args__.__default__;
+var getType =__nefbl_pack__scope_args__.default;
 
 
 /**
@@ -1943,7 +1943,7 @@ var getType =__nefbl_pack__scope_args__.__default__;
  * @param {*} value 需要判断类型的值
  * @returns {boolean} 如果是number返回true，否则返回false
  */
-__nefbl_pack__scope_bundle__.__default__= function (value) {
+__nefbl_pack__scope_bundle__.default= function (value) {
     return typeof value === 'number' || (
         value !== null && typeof value === 'object' &&
         getType(value) === '[object Number]'
@@ -1960,7 +1960,7 @@ window.__nefbl_pack__bundleSrc__['8']=function(){
     var __nefbl_pack__scope_bundle__={};
     var __nefbl_pack__scope_args__;
     __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('5');
-var getType =__nefbl_pack__scope_args__.__default__;
+var getType =__nefbl_pack__scope_args__.default;
 
 
 /**
@@ -1969,7 +1969,7 @@ var getType =__nefbl_pack__scope_args__.__default__;
  * @param {*} value 需要判断类型的值
  * @returns {boolean} 如果是String返回true，否则返回false
  */
-__nefbl_pack__scope_bundle__.__default__= function (value) {
+__nefbl_pack__scope_bundle__.default= function (value) {
     var type = typeof value;
     return type === 'string' || (type === 'object' && value != null && !Array.isArray(value) && getType(value) === '[object String]');
 };
@@ -1984,7 +1984,7 @@ window.__nefbl_pack__bundleSrc__['9']=function(){
     var __nefbl_pack__scope_bundle__={};
     var __nefbl_pack__scope_args__;
     __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('5');
-var getType =__nefbl_pack__scope_args__.__default__;
+var getType =__nefbl_pack__scope_args__.default;
 
 
 /**
@@ -1993,7 +1993,7 @@ var getType =__nefbl_pack__scope_args__.__default__;
  * @param {*} value 需要判断类型的值
  * @returns {boolean} 如果是symbol返回true，否则返回false
  */
-__nefbl_pack__scope_bundle__.__default__= function (value) {
+__nefbl_pack__scope_bundle__.default= function (value) {
     var type = typeof value;
     return type === 'symbol' || (type === 'object' && value !== null && getType(value) === '[object Symbol]');
 };
@@ -2008,10 +2008,10 @@ window.__nefbl_pack__bundleSrc__['10']=function(){
     var __nefbl_pack__scope_bundle__={};
     var __nefbl_pack__scope_args__;
     __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('5');
-var getType =__nefbl_pack__scope_args__.__default__;
+var getType =__nefbl_pack__scope_args__.default;
 
 __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('4');
-var isObject =__nefbl_pack__scope_args__.__default__;
+var isObject =__nefbl_pack__scope_args__.default;
 
 
 /**
@@ -2020,7 +2020,7 @@ var isObject =__nefbl_pack__scope_args__.__default__;
  * @param {*} value 需要判断类型的值
  * @returns {boolean} 如果是Function返回true，否则返回false
  */
-__nefbl_pack__scope_bundle__.__default__= function (value) {
+__nefbl_pack__scope_bundle__.default= function (value) {
     if (!isObject(value)) {
         return false;
     }
@@ -2040,7 +2040,7 @@ window.__nefbl_pack__bundleSrc__['11']=function(){
     var __nefbl_pack__scope_bundle__={};
     var __nefbl_pack__scope_args__;
     __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('5');
-var getType =__nefbl_pack__scope_args__.__default__;
+var getType =__nefbl_pack__scope_args__.default;
 
 
 /**
@@ -2051,7 +2051,7 @@ var getType =__nefbl_pack__scope_args__.__default__;
  * @returns {boolean} 如果是朴素的'对象'返回true，否则返回false
  */
 
-__nefbl_pack__scope_bundle__.__default__= function (value) {
+__nefbl_pack__scope_bundle__.default= function (value) {
     if (value === null || typeof value !== 'object' || getType(value) != '[object Object]') {
         return false;
     }
@@ -2078,10 +2078,10 @@ window.__nefbl_pack__bundleSrc__['12']=function(){
     var __nefbl_pack__scope_bundle__={};
     var __nefbl_pack__scope_args__;
     __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('11');
-var isPlainObject =__nefbl_pack__scope_args__.__default__;
+var isPlainObject =__nefbl_pack__scope_args__.default;
 
 __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('5');
-var getType =__nefbl_pack__scope_args__.__default__;
+var getType =__nefbl_pack__scope_args__.default;
 
 
 /**
@@ -2091,7 +2091,7 @@ var getType =__nefbl_pack__scope_args__.__default__;
  * @param {*} value 需要判断类型的值
  * @returns {boolean} 如果是错误对象返回true，否则返回false
  */
-__nefbl_pack__scope_bundle__.__default__= function (value) {
+__nefbl_pack__scope_bundle__.default= function (value) {
     if (value === null || typeof value !== 'object') {
         return false;
     }
@@ -2111,31 +2111,31 @@ window.__nefbl_pack__bundleSrc__['13']=function(){
     var __nefbl_pack__scope_bundle__={};
     var __nefbl_pack__scope_args__;
     __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('4');
-var _isObject =__nefbl_pack__scope_args__.__default__;
+var _isObject =__nefbl_pack__scope_args__.default;
 
 
 __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('6');
-var _isBoolean =__nefbl_pack__scope_args__.__default__;
+var _isBoolean =__nefbl_pack__scope_args__.default;
 
 __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('7');
-var _isNumber =__nefbl_pack__scope_args__.__default__;
+var _isNumber =__nefbl_pack__scope_args__.default;
 
 __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('8');
-var _isString =__nefbl_pack__scope_args__.__default__;
+var _isString =__nefbl_pack__scope_args__.default;
 
 __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('9');
-var _isSymbol =__nefbl_pack__scope_args__.__default__;
+var _isSymbol =__nefbl_pack__scope_args__.default;
 
 
 __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('10');
-var _isFunction =__nefbl_pack__scope_args__.__default__;
+var _isFunction =__nefbl_pack__scope_args__.default;
 
 
 __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('12');
-var _isError =__nefbl_pack__scope_args__.__default__;
+var _isError =__nefbl_pack__scope_args__.default;
 
 __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('11');
-var _isPlainObject =__nefbl_pack__scope_args__.__default__;
+var _isPlainObject =__nefbl_pack__scope_args__.default;
 
 
 var domTypeHelp = function (types, value) {
@@ -2313,7 +2313,7 @@ window.__nefbl_pack__bundleSrc__['15']=function(){
  */
 
 __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('3');
-var globalNAMESPACE =__nefbl_pack__scope_args__.__default__;
+var globalNAMESPACE =__nefbl_pack__scope_args__.default;
 
 __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('13');
 var isFunction=__nefbl_pack__scope_args__.isFunction;
@@ -2641,7 +2641,7 @@ if (!('Promise' in globalNAMESPACE)) {
 window.__nefbl_pack__bundleSrc__['16']=function(){
     var __nefbl_pack__scope_bundle__={};
     var __nefbl_pack__scope_args__;
-    __nefbl_pack__scope_bundle__.__default__= "\n .help{\n\ntext-align: center;\n\nmargin-top: 100px;\n\n}\n\n .help>div.logo{\n\nbackground-image: url('./logo.png');\n\nheight: 200px;\n\nbackground-repeat: no-repeat;\n\nbackground-position: center;\n\nbackground-size: auto 80%;\n\n}\n\n .help>div.links>a{\n\nfont-size: 14px;\n\nfont-weight: 800;\n\npadding:10px;\n\n}\n"
+    __nefbl_pack__scope_bundle__.default= "\n .help{\n\ntext-align: center;\n\nmargin-top: 100px;\n\n}\n\n .help>div.logo{\n\nbackground-image: url('./logo.png');\n\nheight: 200px;\n\nbackground-repeat: no-repeat;\n\nbackground-position: center;\n\nbackground-size: auto 80%;\n\n}\n\n .help>div.links>a{\n\nfont-size: 14px;\n\nfont-weight: 800;\n\npadding:10px;\n\n}\n"
   
     return __nefbl_pack__scope_bundle__;
 }
@@ -2651,7 +2651,7 @@ window.__nefbl_pack__bundleSrc__['16']=function(){
 window.__nefbl_pack__bundleSrc__['17']=function(){
     var __nefbl_pack__scope_bundle__={};
     var __nefbl_pack__scope_args__;
-    __nefbl_pack__scope_bundle__.__default__= "<div class=\"help\">\n    <div class=\"logo\"></div>\n    <div class=\"links\">\n        <a href=\"https://nefbl.github.io/api/\" target=\"_blank\">文档</a>\n        |\n        <a href=\"https://github.com/nefbl/nefbl\" target=\"_blank\">源码</a>\n        |\n        <a href=\"https://hai2007.gitee.io/sweethome/\" target=\"_blank\">作者</a>\n    </div>\n</div>\n\n<input type=\"text\" ui-model='param' />\n<input type=\"text\" ui-model='param' />\n"
+    __nefbl_pack__scope_bundle__.default= "<div class=\"help\">\n    <div class=\"logo\"></div>\n    <div class=\"links\">\n        <a href=\"https://nefbl.github.io/api/\" target=\"_blank\">文档</a>\n        |\n        <a href=\"https://github.com/nefbl/nefbl\" target=\"_blank\">源码</a>\n        |\n        <a href=\"https://hai2007.gitee.io/sweethome/\" target=\"_blank\">作者</a>\n    </div>\n</div>\n\n<input type=\"text\" ui-model='param' />\n<input type=\"text\" ui-model='param' />\n"
   
     return __nefbl_pack__scope_bundle__;
 }
@@ -2674,10 +2674,10 @@ var Component=__nefbl_pack__scope_args__.Component;
 var ref=__nefbl_pack__scope_args__.ref;
 
 __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('16');
-var style =__nefbl_pack__scope_args__.__default__;
+var style =__nefbl_pack__scope_args__.default;
 
 __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('17');
-var template =__nefbl_pack__scope_args__.__default__;
+var template =__nefbl_pack__scope_args__.default;
 
 
 var _class = (_dec = Component({
@@ -2701,7 +2701,7 @@ var _class = (_dec = Component({
   return _class2;
 }()) || _class2);
 
-__nefbl_pack__scope_bundle__.__default__=_class;
+__nefbl_pack__scope_bundle__.default=_class;
   
     return __nefbl_pack__scope_bundle__;
 }
@@ -2760,7 +2760,7 @@ var _class = (_dec = Directive({
   return _class2;
 }()) || _class2);
 
-__nefbl_pack__scope_bundle__.__default__=_class;
+__nefbl_pack__scope_bundle__.default=_class;
   
     return __nefbl_pack__scope_bundle__;
 }
@@ -2793,7 +2793,7 @@ var namespace = {
  * 结点操作补充
  */
 
-__nefbl_pack__scope_bundle__.__default__= {
+__nefbl_pack__scope_bundle__.default= {
 
     // 阻止冒泡
     "stopPropagation": function (event) {
@@ -3097,7 +3097,7 @@ var Directive=__nefbl_pack__scope_args__.Directive;
 var setValue=__nefbl_pack__scope_args__.setValue;
 
 __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('20');
-var xhtml =__nefbl_pack__scope_args__.__default__;
+var xhtml =__nefbl_pack__scope_args__.default;
 
 
 var _class = (_dec = Directive({
@@ -3125,7 +3125,7 @@ var _class = (_dec = Directive({
   return _class2;
 }()) || _class2);
 
-__nefbl_pack__scope_bundle__.__default__=_class;
+__nefbl_pack__scope_bundle__.default=_class;
   
     return __nefbl_pack__scope_bundle__;
 }
@@ -3147,7 +3147,7 @@ __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('1');
 var Directive=__nefbl_pack__scope_args__.Directive;
 
 __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('20');
-var xhtml =__nefbl_pack__scope_args__.__default__;
+var xhtml =__nefbl_pack__scope_args__.default;
 
 
 var _class = (_dec = Directive({
@@ -3187,7 +3187,7 @@ var _class = (_dec = Directive({
   return _class2;
 }()) || _class2);
 
-__nefbl_pack__scope_bundle__.__default__=_class;
+__nefbl_pack__scope_bundle__.default=_class;
   
     return __nefbl_pack__scope_bundle__;
 }
@@ -3205,16 +3205,16 @@ __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('1');
 var Module=__nefbl_pack__scope_args__.Module;
 
 __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('18');
-var AppComponent =__nefbl_pack__scope_args__.__default__;
+var AppComponent =__nefbl_pack__scope_args__.default;
 
 __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('19');
-var uiBind =__nefbl_pack__scope_args__.__default__;
+var uiBind =__nefbl_pack__scope_args__.default;
 
 __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('21');
-var uiModel =__nefbl_pack__scope_args__.__default__;
+var uiModel =__nefbl_pack__scope_args__.default;
 
 __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('22');
-var uiOn =__nefbl_pack__scope_args__.__default__;
+var uiOn =__nefbl_pack__scope_args__.default;
 
 
 var _class = (_dec = Module({
@@ -3226,7 +3226,7 @@ var _class = (_dec = Module({
   _classCallCheck(this, _class2);
 }) || _class2);
 
-__nefbl_pack__scope_bundle__.__default__=_class;
+__nefbl_pack__scope_bundle__.default=_class;
   
     return __nefbl_pack__scope_bundle__;
 }
@@ -3240,12 +3240,12 @@ window.__nefbl_pack__bundleSrc__['24']=function(){
 var platform=__nefbl_pack__scope_args__.platform;
 
 __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('2');
-var normalize =__nefbl_pack__scope_args__.__default__;
+var normalize =__nefbl_pack__scope_args__.default;
 
 __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('15');
 
 __nefbl_pack__scope_args__=window.__nefbl_pack__getBundle('23');
-var appModule =__nefbl_pack__scope_args__.__default__;
+var appModule =__nefbl_pack__scope_args__.default;
 
 platform({
   el: document.getElementById('root'),

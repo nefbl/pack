@@ -39,7 +39,7 @@ module.exports = function analyseBundle(filepath, config) {
 
     //【警告】
     // 对class转义后的代码进行特殊兼容
-    source = source.replace(/export { _class as default };/, '__nefbl_pack__scope_bundle__.__default__=_class;');
+    source = source.replace(/export { _class as default };/, '__nefbl_pack__scope_bundle__.default=_class;');
 
     //【1】导入
     let importStatement = null;

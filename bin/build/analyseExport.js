@@ -4,9 +4,9 @@ module.exports = function analyseExport(statement) {
     // 去掉开头的export
     statement = statement.replace(/^export +/, '');
 
-    // export default => __nefbl_pack__scope_bundle__.__default__=
+    // export default => __nefbl_pack__scope_bundle__.default=
     if (/^default/.test(statement)) {
-        statement = "__nefbl_pack__scope_bundle__.__default__" + (statement.replace(/^default/, '='));
+        statement = "__nefbl_pack__scope_bundle__.default" + (statement.replace(/^default/, '='));
     }
 
     // export function XXX() => __nefbl_pack__scope_bundle__.XXX=function()
