@@ -17,8 +17,31 @@
 ## Issues
 使用的时候遇到任何问题或有好的建议，请点击进入[issue](https://github.com/nefbl/pack/issues)！
 
-
 ## How to use?
+
+如果你想快速试试，可以使用命令创建项目。
+
+首先，你需要安装cli工具：
+
+```
+npm install -g @nefbl/cli
+```
+
+然后，找个地方（比如桌面）执行生成命令：
+
+```
+nefbl create
+```
+
+根据提示依次输入项目名称、描述、选择打包工具等即可。
+
+<img src='./images/img1.png' />
+
+如上截图，请在选择打包工具的时候，选择```@nefbl/pack```这一项。
+
+最后回车，即可得到一个空的基于```@nefbl/pack```打包的项目了。
+
+当然，如果你不想创建，也可是直接查看我们提供的[ 例子项目 example ](https://github.com/nefbl/example)哦~
 
 具体的使用你可以[查阅文档](https://nefbl.github.io/pack)哦~
 
