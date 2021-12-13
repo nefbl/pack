@@ -41,9 +41,20 @@ nefbl create
 
 最后回车，即可得到一个空的基于```@nefbl/pack```打包的项目了。
 
-当然，如果你不想创建，也可是直接查看我们提供的[ 例子项目 example ](https://github.com/nefbl/example)哦~
+当然，如果你不想创建，也可以直接查看我们提供的[ 例子项目 example ](https://github.com/nefbl/example)哦~
 
 具体的使用你可以[查阅文档](https://nefbl.github.io/pack)哦~
+
+### 更多基于此打包工具的项目
+
+- [在线H5音频编辑器](https://github.com/hai2007/audio-editor)
+- [前端演示例子](https://github.com/hai2007/What-is-the-front-end)
+
+等......
+
+欢迎你的加入，如果希望加入我们，请去[issue](https://github.com/nefbl/pack/issues)给我们留言。
+
+我们会基于此积累更多打包工具相关技术，不断丰富本项目，待时机成熟，再设计并开发一个真正通用的打包工具，如果运气不好，就止步于此吧。
 
 ## How to debug?
 
