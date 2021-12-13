@@ -32,3 +32,7 @@ v0.4.0:
     date:2021-12-11
     changes:
       -  build模式新增压缩配置min，默认压缩
+v0.4.1:
+    date:2021-12-13
+    changes:
+      -  新增缺省后缀配置suffix

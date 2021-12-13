@@ -1,6 +1,6 @@
 {
   "name": "@nefbl/pack",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "nefbl打包工具",
   "main": "index.js",
   "bin": {

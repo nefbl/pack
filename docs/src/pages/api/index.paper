@@ -34,6 +34,9 @@
                                     <li>
                                         <h6 @click='doScroll("config-items-min")'>min</h6>
                                     </li>
+                                    <li>
+                                        <h6 @click='doScroll("config-items-suffix")'>suffix</h6>
+                                    </li>
                                 </ul>
                             </li>
                         </ul>

@@ -114,6 +114,12 @@ devServer: {
     <p>
         可选，只在打包模式有效，布尔值类型，默认true，表示打包后进行代码压缩。
     </p>
+    <h4 id='fixed-config-items-suffix'>
+        suffix
+    </h4>
+    <p>
+        可选，表示缺省后缀，数组类型，默认['.js', '.ts', '.json']。
+    </p>
     <h2 id='fixed-terminal'>
         命令
     </h2>

@@ -13,6 +13,8 @@ module.exports = {
         'nefbl': "./src/lib/nefbl.js"
     },
 
+    // suffix:['.ts','.js','.json']
+
     // loader: [{
     //     test: /\.(js|ts)$/,
     //     handler: [function (source) {

@@ -15,6 +15,9 @@ module.exports = function (_process) {
 
     config.context = process.cwd();
 
+    // 缺省后缀
+    config.suffix = config.suffix || ['.js', '.ts', '.json'];
+
     // 入口地址校对
     config.entry = {
         file: nodejs.fullPath(config.entry)

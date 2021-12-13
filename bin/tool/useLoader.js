@@ -4,7 +4,7 @@ const getFilePath = require('./getFilePath');
 module.exports = function (filepath, config) {
 
     let content = null;
-    filepath = getFilePath(filepath);
+    filepath = getFilePath(filepath, config.suffix);
 
     for (let item of config.loader) {
         if (item.test.test(filepath)) {

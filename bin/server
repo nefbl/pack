@@ -8,7 +8,6 @@ const getFilePath = require('./tool/getFilePath');
 const nodejs = require('@hai2007/nodejs');
 const readFileSync = require('./tool/readFileSync');
 const useLoader = require('./tool/useLoader');
-const suffixArray = require('./config/suffix');
 const getMainUrl = require('./tool/getMainUrl');
 
 // 首先，获取配置文件
@@ -23,7 +22,7 @@ nodejs.server({
     contentBase: config.devServer.contentBase,
 
     // 设置缺省后缀
-    suffix: suffixArray,
+    suffix: config.suffix,
 
     // 拦截处理
     handler: function (request, response) {
@@ -44,7 +43,7 @@ nodejs.server({
             }
 
             // 如果文件不存在，就应该使用main等关键字修改路径
-            if (getFilePath(filepath) === null) {
+            if (getFilePath(filepath, config.suffix) === null) {
                 filepath = getMainUrl(filepath);
             }
         }
@@ -69,7 +68,7 @@ nodejs.server({
 
         // 如果是来自node_modules的普通文件
         if (/\/@modules/.test(request.url) && content === null) {
-            content = readFileSync(filepath);
+            content = readFileSync(filepath, config.suffix);
         }
 
         // 如果是被处理的文件

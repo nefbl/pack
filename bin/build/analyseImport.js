@@ -32,10 +32,10 @@ module.exports = function (statement, filecontext, config) {
     // 路径变成全路径
     else {
         if (/^[.|\/]/.test(url)) {
-            url = getFilePath(nodejs.fullPath(url, filecontext));
+            url = getFilePath(nodejs.fullPath(url, filecontext), config.suffix);
         } else {
             url = nodejs.fullPath("node_modules/" + url, config.context);
-            url = getFilePath(url) || getMainUrl(url);
+            url = getFilePath(url, config.suffix) || getMainUrl(url);
         }
     }
 

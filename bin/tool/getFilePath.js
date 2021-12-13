@@ -1,7 +1,6 @@
 const fs = require('fs');
-const suffixArray = require('../config/suffix');
 
-module.exports = function (filePath) {
+module.exports = function (filePath, suffixArray) {
 
     for (let suffix of ['', ...suffixArray]) {
         let _filePath = filePath + suffix;

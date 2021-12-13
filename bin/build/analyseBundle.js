@@ -42,7 +42,7 @@ module.exports = function analyseBundle(filepath, config) {
     let filecontext = nodejs.fullPath('../', filepath);
 
     // 读取具体代码
-    let source = (useLoader(filepath, config) || readFileSync(filepath)) + "\n  ";
+    let source = (useLoader(filepath, config) || readFileSync(filepath, config.suffix)) + "\n  ";
 
     //【警告】
     // 对class转义后的代码进行特殊兼容
@@ -83,7 +83,7 @@ module.exports = function analyseBundle(filepath, config) {
         lazyBundleIndex += 1;
 
         // 懒加载文件地址
-        let lazyFilepath = getFilePath(nodejs.fullPath(lazyStatement[2], filecontext));
+        let lazyFilepath = getFilePath(nodejs.fullPath(lazyStatement[2], filecontext), config.suffix);
 
         // 懒加载导出地址
         let lazyOutput = config.output.file.replace(/\.js$/, '-bundle' + lazyBundleIndex + '.js')
