@@ -41,7 +41,7 @@ nefbl create
 
 最后回车，即可得到一个空的基于```@nefbl/pack```打包的项目了。
 
-当然，如果你不想创建，也可以直接查看我们提供的[ 例子项目 example ](https://github.com/nefbl/example)哦~
+当然，如果你不想创建，也可以直接查看我们提供的[ 例子项目 example ](https://github.com/nefbl/example/tree/@nefbl/pack)哦~
 
 具体的使用你可以[查阅文档](https://nefbl.github.io/pack)哦~
 
