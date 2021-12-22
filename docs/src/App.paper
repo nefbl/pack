@@ -1,6 +1,14 @@
 <template>
     <header>
-        <span>@nefbl/pack</span>
+        <span>
+            @nefbl/pack
+            <i>温馨提示：本项目已转入维护状态，并由
+                <a href="https://etcpack.github.io/api/" class='link' target="_blank">EtcPack</a>
+                代替其为
+                <a href="https://nefbl.github.io/api/" class='link' target="_blank">Nefbl</a>
+                提供项目打包功能！
+            </i>
+        </span>
         <nav>
             <span @click='loadpage("begin","no")' :active='url=="begin"?"yes":"no"'>
                 开始
@@ -73,6 +81,19 @@
                 font-size: 20px;
                 font-weight: 200;
                 vertical-align: top;
+
+                &>i {
+                    font-size: 12px;
+                    background-color: #ff9800;
+                    padding: 5px 10px;
+                    color: white;
+                    font-weight: 800;
+                    margin-left: 30px;
+
+                    a {
+                        text-decoration: underline;
+                    }
+                }
             }
 
             &>nav {
