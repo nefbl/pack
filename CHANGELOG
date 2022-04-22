@@ -41,3 +41,7 @@ v0.4.2:
     changes:
       -  修复开发dev模式对导入语句前置加@module的解析错误
       -  开发dev模式新增自动刷新功能
+v0.5.0
+    date:2022-04-21
+    changes:
+      -  修复bug: https://github.com/etcpack/etcpack/issues/3
